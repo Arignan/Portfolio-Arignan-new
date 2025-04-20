@@ -1,0 +1,238 @@
+/* src/components/Navbar/Navbar.module.css */
+
+/* Base Navbar Styling */
+.container{
+    max-width: auto;
+}
+.navbar {
+    background-color: none; /* Start transparent or very light */
+    color: var(--text-dark, #333); /* Dark text */
+    padding: 0.5rem 0; /* Reduced padding */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-bottom: 1px solid transparent; /* Start with transparent border */
+    
+  }
+  
+  /* Style when scrolled */
+  .navbar.scrolled {
+    background-color: none; /* Semi-transparent white */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Optional: Frosted glass effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    /* border-bottom: 1px solid #eee; */ /* Optional subtle border */
+  }
+  
+  /* Navbar Content Container (uses global .container) */
+  .navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 65px; /* Ensure enough height */
+  }
+  
+  /* Logo Styling */
+  .logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    z-index: 5; /* Ensure logo stays above mobile menu background */
+  }
+  
+  .logoImage {
+    height: 90px; /* Adjust as needed */
+    width: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    /* Optional subtle effect */
+     transition: transform 0.3s ease;
+  }
+  .logoImage:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Hamburger Button Styling */
+  .hamburgerButton {
+    display: none; /* Hidden on Desktop */
+    background: none;
+    border: none;
+    border-radius: 100%;
+    color: var(--text-dark, #333); /* Icon color */
+    font-size: 1.8rem; /* Icon size */
+    cursor: pointer;
+    padding: 0.5rem; /* Easier to tap */
+    z-index: 10; /* Ensure button is clickable */
+    transition: color 0.3s ease;
+    position: relative; /* Needed if menu position is relative to it, but absolute below works better */
+  }
+  .hamburgerButton:hover {
+      color: var(--primary-color, #4a90e2);
+  }
+  .hamburgerButton:focus {
+     outline: 2px solid var(--primary-color, #4a90e2);
+     outline-offset: 2px;
+  }
+  
+  /* Navigation Menu - Desktop */
+  .navMenu {
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    padding: 15px;
+    align-items: center; /* Align items vertically */
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+  }
+  
+  .navItem {
+    margin-left: 1.8rem; /* Slightly more space */
+    font-size: 1.2rem; /* Slightly larger font */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .navLink {
+    color: var(--text-light, #ffffff); /* Slightly lighter than default */
+    text-decoration: none;
+    padding: 0.6rem 0.2rem; /* Padding top/bottom for bigger hit area */
+    position: relative; /* For hover effect */
+    transition: color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .navLink::after { /* Underline hover effect */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px; /* Position below text */
+    left: 0;
+    background-color: var(--primary-color, #4a90e2);
+    color: blue;
+    transition: width 0.3s ease;
+  }
+  
+  .navLink:hover {
+    color: var(--text-dark, #8055e2); /* Darken text on hover */
+  }
+  .navLink:hover::after {
+    width: 100%; /* Expand underline on hover */
+  }
+  .navLink:focus {
+    outline: 2px solid var(--primary-color, #4a90e2);
+     outline-offset: 4px;
+     border-radius: 2px; /* slight rounding on focus outline */
+  }
+  
+  /* --- Responsive Design --- */
+  @media (max-width: 992px) { /* Slightly larger breakpoint maybe? */
+    .navItem {
+       margin-left: 1.2rem; /* Reduce spacing slightly */
+       font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hamburgerButton {
+      display: flex; /* Show hamburger button */
+      align-items: center;
+      justify-content: center;
+    }
+  
+    /* Style the mobile menu container */
+    .navMenu {
+      display: block;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      justify-content: flex-start; /* Align items to the top */
+      position: absolute;
+      top: calc(100% + 5px); /* Position below navbar container + small gap */
+      right: 15px; /* Position from the right edge (adjust based on container padding) */
+      width: auto; /* Let content determine width */
+      min-width: 200px; /* Ensure a minimum usable width */
+      background-color: rgba(255, 255, 255, 0.98); /* Use scrolled background */
+      box-shadow:inset 0px 0px 10px 2px rgb(58 140 199 / 84%), 0px 0px 8px 2px rgb(0 0 0 / 41%);
+      border-radius: 40px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px); /* For Safari */
+      padding: 0.5rem 0; /* Padding top/bottom inside dropdown */
+      margin: 0; /* Reset margin */
+  
+      /* Hiding/Showing Animation */
+      overflow: hidden; /* Clip content */
+
+      /* Visibility transition using opacity and transform */
+        opacity: 0;
+        transform: translateY(-10px); /* Start slightly up */
+        visibility: hidden; /* Use visibility for accessibility */
+        pointer-events: none; /* Prevent interaction when hidden */
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        z-index: 5; /* Below hamburger button, above page content */
+    }
+  
+    /* When the menu is open */
+    .navMenuMobileOpen {
+        opacity: 1;
+        transform: translateY(0); /* Move to final position */
+        visibility: visible;
+        pointer-events: auto; /* Allow interaction */
+        /* max-height animation removed - using opacity/transform now */
+    }
+  
+    /* Mobile Nav Item Styling */
+    .navItem {
+      margin: 0; /* Remove horizontal margin */
+      width: 100%;
+      text-align: center;
+      
+    }
+  
+    /* Mobile Nav Link Styling */
+    .navLink {
+      display: block; /* Make links full width */
+      padding: 0.75rem 1.5rem; /* Adjust padding for dropdown feel */
+      width: 100%;
+      color: var(--text-dark, #333); /* Darker text for visibility */
+      border-bottom: none; /* Remove the full-width borders */
+      text-align: left; /* Align text left typically in dropdowns */
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+     .navLink::after { /* Hide underline effect on mobile */
+        display: none;
+     }
+  
+    .navItem:last-child .navLink {
+      border-bottom: none; /* Remove border from last item */
+    }
+  
+     .navLink:hover {
+        background-color: var(--primary-color, #4a90e2);
+        color: #fff;
+     }
+     .navItem:first-child .navLink {
+        border-top-left-radius: 8px; /* Match container radius */
+        border-top-right-radius: 8px;
+    }
+     .navItem:last-child .navLink {
+         border-bottom-left-radius: 8px;
+         border-bottom-right-radius: 8px;
+    }
+  }
+  
+  /* Optional: Adjustments for very small screens */
+  @media (max-width: 360px) {
+      .logoImage {
+          height: 50px;
+          width: 50px;
+      }
+      .navbarContainer {
+          min-height: 55px;
+      }
+       .hamburgerButton {
+           font-size: 1.6rem;
+       }
+  }

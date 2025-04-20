@@ -1,0 +1,55 @@
+/* src/components/Skills/Skills.module.css */
+.skills {
+    background-color: #f9fafb; /* Slightly different light background */
+  }
+  
+  /* Use global h2 styling */
+  
+  .skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    margin-top: 2rem; /* Space below h2 */
+  }
+  
+  .skillCategory {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .skillCategory:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+  }
+  
+  .skillCategory h3 {
+    color: #4a90e2; /* Accent color for category titles */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+  
+  .skillCategory ul {
+    list-style: none; /* Already global, but ensures it */
+  }
+  
+  .skillCategory li {
+    margin-bottom: 0.5rem;
+    color: #555;
+    padding-left: 1.2rem; /* Indent items */
+    position: relative; /* For pseudo-element */
+  }
+  
+  .skillCategory li::before {
+    content: '▹'; /* Custom bullet */
+    position: absolute;
+    left: 0;
+    color: #4a90e2; /* Accent color */
+    font-weight: bold;
+  }
+  
+  
+  /* No media query needed for grid columns due to auto-fit */

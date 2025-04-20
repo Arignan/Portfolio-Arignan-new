@@ -1,0 +1,86 @@
+/* src/components/Contact/Contact.module.css */
+.contact {
+    background-color: #e2e8f0; /* Match hero background? Or choose another */
+    padding-bottom: 100px; /* Extra space before footer */
+  }
+  
+  /* Use global h2 styling */
+  
+  .contactIntro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto; /* Center and add space below */
+    color: #4a5568;
+  }
+  
+  .contactInfo {
+     text-align: center;
+     margin-bottom: 3rem; /* Space before potential form */
+  }
+  
+  .contactInfo p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+   .contactInfo a {
+     color: #4a90e2; /* Link color */
+     text-decoration: underline;
+   }
+  
+    .contactInfo a:hover {
+      color: #357abd;
+    }
+  
+  /* --- Styles for a future form (keep commented or implement later) --- */
+  /*
+  .contactForm {
+    max-width: 700px;
+    margin: 2rem auto 0 auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .formGroup textarea {
+    resize: vertical;
+  }
+  
+  .submitButton {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .submitButton:hover {
+    background-color: #357abd;
+  }
+  */

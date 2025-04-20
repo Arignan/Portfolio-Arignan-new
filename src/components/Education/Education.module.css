@@ -1,0 +1,50 @@
+/* src/components/Education/Education.module.css */
+.education {
+    background-color: #fff; /* Match About section? Or choose another */
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Using global h2 style */
+  /* .education h2 { ... } */
+  
+  .educationList {
+    max-width: 800px; /* Consistent width */
+    margin: 2rem auto 0 auto;
+    display: grid;
+    gap: 1.5rem; /* Space between education entries */
+  }
+  
+  .educationItem {
+    background-color: #f9fafb; /* Light background for items */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color, #4a90e2); /* Accent border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .educationItem h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--text-dark, #333);
+    margin-bottom: 0.25rem;
+  }
+  
+  .institution {
+    font-weight: 500;
+    color: var(--primary-color, #4a90e2);
+    margin-bottom: 0.25rem;
+  }
+  
+  .years {
+    font-size: 0.9rem;
+    color: var(--text-light, #666);
+    margin-bottom: 0.75rem;
+  }
+  
+  .description {
+     font-size: 0.95rem;
+     color: var(--text-light, #555);
+     margin-bottom: 0;
+     line-height: 1.5;
+  }

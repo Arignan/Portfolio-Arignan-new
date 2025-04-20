@@ -1,0 +1,31 @@
+/* src/components/Footer/Footer.module.css */
+.footer {
+    background-color: #333; /* Dark footer */
+    color: #ccc; /* Light gray text */
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .footerContent {
+    max-width: 800px; /* Centered content width */
+    /* Optional: can use flex/grid if layout gets complex */
+  }
+  
+  .socialLinks {
+     margin-bottom: 1rem;
+  }
+  
+  .socialLinks a {
+    color: #ccc;
+    margin: 0 0.75rem;
+    font-size: 1.2rem; /* Make icons/links slightly larger */
+    transition: color 0.3s ease;
+  }
+  
+  .socialLinks a:hover {
+    color: #4a90e2; /* Highlight color */
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+  }

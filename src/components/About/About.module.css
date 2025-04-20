@@ -1,0 +1,45 @@
+/* src/components/About/About.module.css */
+.about {
+    background-color: #fff; /* White background for contrast */
+  }
+  
+  /* Use global h2 styling, no need to repeat */
+  
+  .aboutContent {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: 1fr 2fr; /* Image column, Text column */
+    gap: 2rem; /* Space between grid items */
+    align-items: center; /* Vertically align items in the grid */
+  }
+  
+  .aboutImage img {
+    max-width: 250px; /* Control image size */
+    border-radius: 50%; /* Make it circular */
+    margin: 0 auto; /* Center if needed */
+    border: 5px solid #eee; /* Optional border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .aboutText p {
+    margin-bottom: 1rem; /* Space between paragraphs */
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text */
+  }
+  
+  .aboutText p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .aboutContent {
+      grid-template-columns: 1fr; /* Stack columns */
+      text-align: center;
+    }
+    .aboutImage {
+      margin-bottom: 2rem; /* Space below image when stacked */
+    }
+     .aboutImage img {
+       max-width: 200px;
+     }
+  }

@@ -1,0 +1,115 @@
+/* src/components/Experience/Experience.module.css */
+.experience {
+    background-color: #f9fafb; /* Keep consistent with Skills or choose another */
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Using global h2 style */
+  /* .experience h2 { ... } */
+  
+  .timeline {
+    position: relative;
+    max-width: 800px; /* Control width */
+    margin: 2rem auto 0 auto;
+  }
+  
+  /* The vertical timeline bar */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--primary-color, #4a90e2); /* Use CSS variable or fallback */
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Position to the left */
+    margin-left: -1.5px;
+  }
+  
+  .timelineItem {
+    padding: 10px 40px 20px 60px; /* Top, Right, Bottom, Left */
+    position: relative;
+    background-color: inherit; /* Transparent background */
+    width: 100%;
+  }
+  
+  /* The circle on the timeline */
+  .timelineItem::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 20px; /* Align with the line */
+    background-color: #fff;
+    border: 3px solid var(--primary-color, #4a90e2);
+    top: 15px; /* Adjust vertical position */
+    border-radius: 50%;
+    z-index: 1;
+    margin-left: -7.5px; /* Center the circle */
+  }
+  
+  .timelineContent {
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timelineContent h3 {
+    margin-top: 0;
+    color: var(--primary-color, #4a90e2);
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .company {
+     font-weight: 600;
+     color: var(--text-dark, #333);
+     margin-bottom: 0.3rem;
+     font-size: 1rem;
+  }
+  
+  .years {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light, #555);
+    margin-bottom: 1rem;
+  }
+  
+  .responsibilities {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .responsibilities li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--text-light, #555);
+  }
+  
+  /* Custom bullet points */
+  .responsibilities li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color, #4a90e2);
+    font-weight: bold;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+     .timeline::after {
+         left: 15px; /* Adjust line position */
+     }
+      .timelineItem {
+          padding-left: 45px; /* Adjust padding */
+          padding-right: 15px;
+      }
+     .timelineItem::after {
+          left: 15px; /* Align circle */
+     }
+  }
