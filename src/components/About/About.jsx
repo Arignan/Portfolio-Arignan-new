@@ -12,7 +12,7 @@ const About = () => {
         <div className={styles.aboutContent}>
           <div className={styles.aboutImage}>
             {/* If image is in public folder: */}
-            <img src="/images/profile.jpg" alt="Arignan G" />
+            <img src="/src/assets/img/profilepic.jpeg" alt="Arignan G" />
             {/* If image is imported from src: */}
             {/* <img src={profilePic} alt="Arignan G" /> */}
           </div>

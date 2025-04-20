@@ -35,16 +35,32 @@ export const experience = [
       institution: "University of Technology",
       degree: "B.S. in Computer Science",
       location: "New York, NY",
-      years: "2016 - 2020",
-      description: "Relevant coursework: Data Structures, Algorithms, Web Development, Database Management. Dean's List 2019, 2020." // Optional details
+      years: "2025 - 2028",
+      description: "Relevant coursework: Data Structures, Algorithms, Web Development, Database Management. Dean's List all semester." // Optional details
     },
     {
       id: 2,
       institution: "Online Course Platform",
       degree: "Full-Stack Web Development Certificate",
       location: "Online",
-      years: "2019",
+      years: "2024-Current",
       description: "Completed an intensive bootcamp covering MERN stack development."
+    },
+    {
+      id: 3,
+      institution: "Kilinochchi Maha Vidyalayam",
+      degree: "A/L in (Mathematics Physics Chemistry)",
+      location: "Online",
+      years: "2018 - 2020",
+      description: "Combined Mathematics, Physics, Chemistry , ICT, English."
+    },
+    {
+      id: 4,
+      institution: "Kilinochchi Vivekanantha Vidyalayam",
+      degree: "O/L in (Mathematics Science English)",
+      location: "Online",
+      years: "2011 - 2017",
+      description: "Mathematics, Science, ICT , English, Commerce."
     },
     // Add more education entries as needed
   ];
