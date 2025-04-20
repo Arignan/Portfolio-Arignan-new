@@ -1,78 +1,227 @@
 /* src/components/Hero/Hero.module.css */
+
 .hero {
-    background-color: #e2e8f0; /* Lighter background for hero */
-    min-height: calc(100vh - 70px); /* Full viewport height minus navbar */
+    /* Use min-height for flexibility, allows content to push it taller if needed */
+    min-height: 100vh;
     display: flex;
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Horizontally center content */
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding-top: 70px; /* Ensure content starts below navbar space */
+    padding: 120px 20px 60px 20px; /* More padding top/bottom */
+    position: relative; /* Needed for absolute positioning of scroll hint */
+    overflow: hidden; /* Prevents potential overflow issues */
+  
+    /* Example Background: Subtle Gradient + Noise Pattern */
+    background-color: #f8f9fa; /* Fallback light gray */
+    background-image: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%),
+                      /* Subtle noise texture */
+                      url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%23cccccc" fill-opacity="0.1" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
   }
   
+  
+  /* Optional: If you add background shapes/blobs later */
+  /* .backgroundShapes { position: absolute; ... } */
+  
+  
   .heroContainer {
-    max-width: 800px;
+    max-width: 800px; /* Max width for content */
+    position: relative; /* Ensure content stays above potential background elements */
+    z-index: 2;
   }
   
   .heroTitle {
-    font-size: 3rem; /* Larger title */
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Responsive font size */
+    font-weight: 700;
     margin-bottom: 1rem;
-    color: #2d3748; /* Darker blue-gray */
+    color: var(--text-dark, #212529); /* Very dark text */
+    line-height: 1.2;
+  }
+  
+  .heroTitle .highlight {
+    color: var(--primary-color, #4a90e2); /* Accent color for name */
   }
   
   .heroSubtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #4a5568; /* Medium gray */
-    /* Style for typing animation cursor if added */
+    font-size: clamp(1.2rem, 4vw, 1.8rem); /* Responsive font size */
+    margin-bottom: 1.5rem;
+    color: var(--text-light, #555);
+    font-weight: 400;
+    min-height: 3em; /* Reserve space to prevent layout shift from typing */
+    display: flex; /* Align static text and animation */
+    align-items: baseline;
+    justify-content: center;
   }
   
-  .heroLinks {
-    margin-top: 2rem;
+  .staticText {
+     margin-right: 0.5ch; /* Small space before animation */
+  }
+  
+  .typingText {
+    font-weight: 500; /* Slightly bolder animated text */
+    color: var(--text-dark, #333);
+  }
+  
+  /* Make the blinking cursor subtle */
+  .heroSubtitle span[data-testid="typed"]::after {
+    border-color: var(--text-light, #555) !important;
+    width: 2px !important;
+    animation: blink 1s infinite !important;
+  }
+  
+  @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+  }
+  
+  .heroDescription {
+    font-size: 1.1rem;
+    color: var(--text-light, #666);
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto; /* Center and add bottom margin */
+    line-height: 1.7;
+  }
+  
+  .heroActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Space between buttons */
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
   }
   
   .ctaButton {
-    background-color: #4a90e2; /* Primary button color */
-    color: #fff;
-    padding: 12px 25px;
+    display: inline-flex; /* Use flex for icon alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Pill shape */
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 1rem; /* Space between buttons/links */
+    transition: all 0.3s ease;
+    text-decoration: none;
   }
   
-  .ctaButton:hover {
-    background-color: #357abd; /* Darker shade on hover */
+  .buttonIcon {
+     margin-right: 8px; /* Space between icon and text */
+     font-size: 1.1em; /* Slightly larger icon */
+  }
+  
+  /* Primary Button Style (Resume) */
+  .resumeButton {
+    background-color: var(--primary-color, #4a90e2);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3); /* Subtle shadow matching color */
+  }
+  
+  .resumeButton:hover {
+    background-color: var(--secondary-color, #357abd);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  }
+  
+  /* Secondary Button Style (Contact) */
+  .contactButton {
+    background-color: transparent;
+    color: var(--primary-color, #4a90e2);
+    border: 2px solid var(--primary-color, #4a90e2);
+  }
+  
+  .contactButton:hover {
+    background-color: var(--primary-color, #4a90e2);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  .heroSocials {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem; /* Space between icons */
   }
   
   .socialLink {
-    color: #4a5568;
-    margin: 0 0.75rem; /* Space around social links */
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    color: var(--text-light, #555);
+    font-size: 1.8rem; /* Larger icons */
+    transition: color 0.3s ease, transform 0.3s ease;
   }
   
   .socialLink:hover {
-    color: #4a90e2; /* Highlight on hover */
+    color: var(--primary-color, #4a90e2);
+    transform: scale(1.1) translateY(-2px); /* Slight grow/lift effect */
+  }
+  .socialLink:focus {
+    outline: 2px solid var(--primary-color, #4a90e2);
+     outline-offset: 4px;
+     border-radius: 50%;
   }
   
-  /* Add responsive styles */
-  @media (max-width: 768px) {
-    .heroTitle {
-      font-size: 2.5rem;
+  /* Optional Scroll Down Hint */
+  .scrollDownHint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-light, #777);
+    font-size: 2rem;
+    animation: bounce 2s infinite ease-in-out;
+    z-index: 3;
+    transition: color 0.3s ease;
+  }
+  .scrollDownHint:hover {
+     color: var(--primary-color, #4a90e2);
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
     }
-    .heroSubtitle {
-      font-size: 1.2rem;
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+  
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .hero {
+       padding: 100px 15px 40px 15px; /* Adjust padding */
+    }
+  
+    .heroActions {
+       gap: 1rem;
     }
     .ctaButton {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      display: block; /* Stack buttons */
-      margin: 0 auto 1rem auto; /* Center and add bottom margin */
-      width: fit-content;
+       padding: 10px 25px;
+       font-size: 0.95rem;
     }
-    .socialLink {
-       margin: 0 0.5rem;
-    }
+  
+  }
+  
+  @media (max-width: 480px) {
+     .heroDescription {
+         font-size: 1rem;
+     }
+      .heroActions {
+          flex-direction: column; /* Stack buttons vertically */
+          gap: 1rem;
+          width: 100%;
+          max-width: 300px; /* Limit button stack width */
+          margin-left: auto;
+          margin-right: auto;
+      }
+       .ctaButton {
+          width: 100%; /* Make stacked buttons full width */
+       }
+      .heroSocials {
+        gap: 1.5rem;
+      }
+      .socialLink {
+         font-size: 1.6rem;
+      }
   }
