@@ -2,7 +2,7 @@
 
 /* Base Navbar Styling */
 .container{
-    max-width: auto;
+    max-width: 100%;
 }
 .navbar {
     background-color: none; /* Start transparent or very light */
