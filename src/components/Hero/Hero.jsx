@@ -1,94 +1,130 @@
 import React from 'react';
 import styles from './Hero.module.css';
-import { TypeAnimation } from 'react-type-animation'; // Assuming you installed this
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Add other icons if needed
-import { FiDownload } from 'react-icons/fi'; // Download icon
-// Optional: Add a down arrow icon for scroll hint
-import { FiArrowDownCircle } from 'react-icons/fi';
+import { TypeAnimation } from 'react-type-animation';
+
+// --- Icon Imports ---
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si'; // Simple Icons for LeetCode
+import { FiDownload, FiSend } from 'react-icons/fi'; // Download & Send (for contact) icons
+
+// --- Image Import ---
+// *** IMPORTANT: Make sure this path is correct! ***
+import profilePic from '../../assets/img/profilepic.jpeg';
 
 const Hero = () => {
   return (
-    // Using <section> is semantically correct for a major page part
     <section id="hero" className={styles.hero}>
-      {/* Optional: Add decorative background elements here if desired */}
-      {/* <div className={styles.backgroundShapes}></div> */}
-
       <div className={`${styles.heroContainer} container`}>
-        <h1 className={styles.heroTitle}>
-          Hi, I'm <span className={styles.highlight}>Arignan Sritharan</span>
-        </h1>
 
-        <div className={styles.heroSubtitle}>
-          <span className={styles.staticText}>I'm a </span>
-          <TypeAnimation
-            sequence={[
-              'Web Developer.',
-              1500,
-              'AI and Robotics Engineering Enthusiast.',
-              1500,
-              'Problem Solver.',
-              1500,
-              'Lifelong Learner.',
-              1500,
-            ]}
-            wrapper="span"
-            speed={50}
-            className={styles.typingText} // Apply specific styles
-            repeat={Infinity}
+        {/* === Text Content Area === */}
+        <div className={styles.heroTextContent}>
+          <h1 className={styles.heroGreeting}>
+            {/* Note: The 3D effect is applied via CSS to the highlight span */}
+            I'm <span className={styles.highlight3d}>Arignan Sritharan</span>
+          </h1>
+
+          {/* Typing Animation for Roles */}
+          <div className={styles.heroRoles}>
+            <TypeAnimation
+              sequence={[
+                'AI and Robotics Enthusiast.',
+                2000,
+                'Fullstack Developer.',
+                2000,
+                'Data Scientist.', // Add another role if desired
+                2000,
+                'Software Engineer.',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              className={styles.typingText} // Use for styling the animated text
+              repeat={Infinity}
+            />
+          </div>
+
+          {/* Action Buttons */}
+          <div className={styles.heroActions}>
+            <a
+              href="/path/to/your/cv.pdf" // *** UPDATE CV PATH ***
+              download
+              className={`${styles.ctaButton} ${styles.resumeButton}`}
+              aria-label="Download my CV"
+            >
+              <FiDownload className={styles.buttonIcon} />
+              Download CV
+            </a>
+            <a
+              href="#contact" // Links to your contact section
+              className={`${styles.ctaButton} ${styles.contactButton}`}
+              aria-label="Go to contact section"
+            >
+              <FiSend className={styles.buttonIcon} /> {/* Changed icon */}
+              Contact Me
+            </a>
+          </div>
+
+          {/* Social Links */}
+          <div className={styles.heroSocials}>
+             <a
+              href="YOUR_LINKEDIN_URL" // *** Update URL ***
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label="LinkedIn Profile"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="YOUR_LEETCODE_URL" // *** Update URL ***
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label="LeetCode Profile"
+            >
+              <SiLeetcode />
+            </a>
+            <a
+              href="YOUR_FACEBOOK_URL" // *** Update URL ***
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label="Facebook Profile"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://github.com/arignan" // *** Update URL ***
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label="GitHub Profile"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="YOUR_INSTAGRAM_URL" // *** Update URL ***
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label="Instagram Profile"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
+
+        {/* === Image Area === */}
+        <div className={styles.heroImageContainer}>
+          {/* Image Background Shape REMOVED */}
+          <img
+            src={profilePic}
+            alt="Arignan Sritharan"
+            className={styles.profileImage}
           />
         </div>
 
-        <p className={styles.heroDescription}>
-          I specialize in building modern, responsive, and user-friendly web
-          applications. Let's create something amazing together!
-        </p>
-
-        {/* Call to Action Buttons & Links */}
-        <div className={styles.heroActions}>
-          <a
-            href="/path/to/your/resume.pdf" // *** IMPORTANT: Update this path ***
-            download
-            className={`${styles.ctaButton} ${styles.resumeButton}`}
-          >
-            <FiDownload className={styles.buttonIcon} />
-            My Resume
-          </a>
-          <a
-            href="#contact" // Link to contact section
-            className={`${styles.ctaButton} ${styles.contactButton}`}
-          >
-            Get In Touch
-          </a>
-        </div>
-
-        {/* Social Links */}
-        <div className={styles.heroSocials}>
-          <a
-            href="https://github.com/arignan" // *** IMPORTANT: Update this URL ***
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.socialLink}
-            aria-label="GitHub Profile"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/your-profile" // *** IMPORTANT: Update this URL ***
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.socialLink}
-            aria-label="LinkedIn Profile"
-          >
-            <FaLinkedin />
-          </a>
-          {/* Add other social links as needed */}
-        </div>
       </div>
-
-      {/* Optional Scroll Down Hint */}
-      <a href="#about" className={styles.scrollDownHint} aria-label="Scroll down to About section">
-         <FiArrowDownCircle />
-      </a>
     </section>
   );
 };
