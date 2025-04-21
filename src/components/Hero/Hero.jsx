@@ -4,11 +4,11 @@ import { TypeAnimation } from 'react-type-animation';
 
 // --- Icon Imports ---
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si'; // Simple Icons for LeetCode
-import { FiDownload, FiSend } from 'react-icons/fi'; // Download & Send (for contact) icons
+import { SiLeetcode } from 'react-icons/si';
+import { FiDownload, FiSend } from 'react-icons/fi';
 
 // --- Image Import ---
-// *** IMPORTANT: Make sure this path is correct! ***
+// *** CRITICAL: Ensure this path is correct! ***
 import profilePic from '../../assets/img/profilepic.jpeg';
 
 const Hero = () => {
@@ -19,39 +19,49 @@ const Hero = () => {
         {/* === Text Content Area === */}
         <div className={styles.heroTextContent}>
           <h1 className={styles.heroGreeting}>
-            {/* Note: The 3D effect is applied via CSS to the highlight span */}
-            I'm <span className={styles.highlight3d}>Arignan Sritharan</span>
+            {/* The 3D effect is applied via CSS to the highlight span */}
+            Hello, I'm <span className={styles.highlight3d}>Arignan Sritharan</span>
           </h1>
 
           {/* Typing Animation for Roles */}
           <div className={styles.heroRoles}>
             <TypeAnimation
               sequence={[
+                // Start with a slightly longer pause
+                1000,
                 'AI and Robotics Enthusiast.',
                 2000,
                 'Fullstack Developer.',
                 2000,
-                'Data Scientist.', // Add another role if desired
+                'Data Scientist.',
                 2000,
-                'Software Engineer.',
+                'Software,AI Engineer.',
                 2000,
               ]}
-              wrapper="span"
+              wrapper="h2" // Using h2 semantically fits better for a role title
               speed={50}
-              className={styles.typingText} // Use for styling the animated text
+              className={styles.typingText}
               repeat={Infinity}
+              cursor={true} // Ensure cursor is visible
             />
           </div>
+
+          {/* Introduction Paragraph - RE-ADDED */}
+          <p className={styles.heroIntroduction}>
+            I specialize in transforming complex challenges into elegant,
+            scalable solutions through cross-disciplinary expertise in Artificial
+            Intelligence, Data Science, and Software Engineering.
+          </p>
 
           {/* Action Buttons */}
           <div className={styles.heroActions}>
             <a
-              href="/path/to/your/cv.pdf" // *** UPDATE CV PATH ***
+              href="/path/to/your/cv.pdf" // *** CRITICAL: UPDATE CV PATH ***
               download
               className={`${styles.ctaButton} ${styles.resumeButton}`}
               aria-label="Download my CV"
             >
-              <FiDownload className={styles.buttonIcon} />
+              <FiDownload aria-hidden="true" className={styles.buttonIcon} />
               Download CV
             </a>
             <a
@@ -59,15 +69,16 @@ const Hero = () => {
               className={`${styles.ctaButton} ${styles.contactButton}`}
               aria-label="Go to contact section"
             >
-              <FiSend className={styles.buttonIcon} /> {/* Changed icon */}
+              <FiSend aria-hidden="true" className={styles.buttonIcon} />
               Contact Me
             </a>
           </div>
 
           {/* Social Links */}
           <div className={styles.heroSocials}>
-             <a
-              href="YOUR_LINKEDIN_URL" // *** Update URL ***
+            <span className={styles.socialsLabel}>Connect:</span> {/* Optional Label */}
+            <a
+              href="YOUR_LINKEDIN_URL" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -76,7 +87,7 @@ const Hero = () => {
               <FaLinkedin />
             </a>
             <a
-              href="YOUR_LEETCODE_URL" // *** Update URL ***
+              href="YOUR_LEETCODE_URL" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -85,7 +96,7 @@ const Hero = () => {
               <SiLeetcode />
             </a>
             <a
-              href="YOUR_FACEBOOK_URL" // *** Update URL ***
+              href="YOUR_FACEBOOK_URL" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -94,7 +105,7 @@ const Hero = () => {
               <FaFacebook />
             </a>
             <a
-              href="https://github.com/arignan" // *** Update URL ***
+              href="https://github.com/arignan" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -103,7 +114,7 @@ const Hero = () => {
               <FaGithub />
             </a>
             <a
-              href="YOUR_INSTAGRAM_URL" // *** Update URL ***
+              href="YOUR_INSTAGRAM_URL" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -116,10 +127,9 @@ const Hero = () => {
 
         {/* === Image Area === */}
         <div className={styles.heroImageContainer}>
-          {/* Image Background Shape REMOVED */}
           <img
             src={profilePic}
-            alt="Arignan Sritharan"
+            alt="Arignan Sritharan Portrait" // More descriptive alt text
             className={styles.profileImage}
           />
         </div>
