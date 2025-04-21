@@ -270,7 +270,7 @@
    }
    .profileImage {
        /* Shape might look weird if too small, consider reverting to 50% radius */
-        border-radius: 50%;
+        border-radius: 25px 133px 132px 133px;
    }
    .heroActions {
        flex-direction: column;
