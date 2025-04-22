@@ -5,6 +5,7 @@ import styles from './Experience.module.css';
 import { experience } from './resumeData';
 import { MdLocationOn } from 'react-icons/md';
 
+
 const Experience = () => {
   return (
     <section id="experience" className={styles.experience}>
@@ -43,6 +44,7 @@ const Experience = () => {
             <p className={styles.noExperience}>No work experience available yet.</p>
           )}
         </div>
+        
       </div>
     </section>
   );
