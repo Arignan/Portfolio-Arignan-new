@@ -1,0 +1,35 @@
+[
+    {
+      "id": "cert-001",
+      "title": "Junior Machine Learning Engineer",
+      "issuer": "Omdena",
+      "date": "Jul 2024",
+      "displayUrl": "https://confirm.omdena.com/LCsmw88",
+      "imageUrl": "src/assets/img/certificates/OmdenaCertificate.png"
+    },
+    {
+      "id": "cert-002",
+      "title": "IBM AI Engineering Professional",
+      "issuer": "Coursera | IBM",
+      "date": "Apr 2024",
+      "displayUrl": "https://www.coursera.org/account/accomplishments/specialization/BZN2247HHNM2",
+      "imageUrl": "src/assets/img/certificates/ibmaiengineering.jpeg"
+    },
+    {
+      "id": "cert-003",
+      "title": "IBM Data Science Professional",
+      "issuer": "Coursera | IBM",
+      "date": "May 2024",
+      "displayUrl": "https://www.coursera.org/account/accomplishments/specialization/Y9JU5WLCGU4N", 
+      "imageUrl": "src/assets/img/certificates/ibmdatascience.jpeg"
+    },
+    {
+      "id": "cert-004",
+      "title": "Moratuwa Trainee Full-Stack developer",
+      "issuer": "Moratuwa university",
+      "date": "Jan 2025",
+      "displayUrl": "https://www.coursera.org/account/accomplishments/specialization/Y9JU5WLCGU4N", 
+      "imageUrl": "src/assets/img/certificates/ibmdatascience.jpe"
+    }
+    
+  ]

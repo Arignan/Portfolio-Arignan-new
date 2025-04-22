@@ -4,6 +4,8 @@ import React from 'react';
 import styles from './Experience.module.css';
 import { experience } from './resumeData';
 import { MdLocationOn } from 'react-icons/md';
+import CertificateDisplayCard from '../CertificateDisplayCard/CertificateDisplayCard';
+import certificatesData from '../CertificateDisplayCard/certificates.json'; // Assuming you have a JSON file for certificates
 
 
 const Experience = () => {
@@ -43,6 +45,20 @@ const Experience = () => {
           ) : (
             <p className={styles.noExperience}>No work experience available yet.</p>
           )}
+        </div>
+        {/* --- New Certificates Subsection --- */}
+        <div className={styles.certificatesSubsection}>
+            {/* You might want a subheading */}
+            <h3 className={styles.subHeading}>Related Credentials</h3>
+            <div className={styles.certificatesGrid}> {/* Container for the cards */}
+              {certificatesData && certificatesData.length > 0 ? (
+                certificatesData.map(cert => (
+                    <CertificateDisplayCard key={cert.id} {...cert} />
+                  ))
+              ) : (
+                <p className={styles.noCertificates}>No certificates to display.</p>
+              )}
+            </div>
         </div>
         
       </div>

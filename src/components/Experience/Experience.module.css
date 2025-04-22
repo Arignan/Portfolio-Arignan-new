@@ -212,7 +212,59 @@
     color: #94a3b8;
     padding: 3rem;
 }
+/* === Styles for Certificates Subsection within Education === */
 
+.certificatesSubsection {
+  margin-top: 4rem; /* Space above the subsection */
+  padding-top: 3rem; /* Space above grid */
+  border-top: 1px solid var(--indigo-border); /* Separator */
+}
+
+/* Re-use or create subheading style */
+.subHeading { /* Adjust if needed */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--indigo-text-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+ .subHeading::after { /* Optional underline */
+   content: ''; position: absolute; bottom: -6px; left: 50%;
+   transform: translateX(-50%); width: 30px; height: 2px;
+   background-color: var(--violet-accent);
+ }
+
+/* Grid layout for certificate cards */
+.certificatesGrid {
+  display: grid;
+  /* Adjust minmax for desired card size */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 2rem; /* Gap between cards */
+  max-width: 1000px; /* Or desired max width */
+  margin: 10px auto; /* Center */
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 6px 0px #ffffff, 0px 0px 5px 0px #ffffff;
+  padding: 1rem; /* Padding around grid */
+}
+
+.noCertificates { /* Styling for empty message */
+  text-align: center;
+  color: var(--indigo-text-muted);
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* Individual card styling is handled by CertificateDisplayCard.module.css */
+
+/* Responsive adjustments for this specific section */
+ @media (max-width: 768px) {
+   .certificatesSubsection { margin-top: 3rem; padding-top: 2rem;}
+   .subHeading { font-size: 1rem; margin-bottom: 2rem; }
+   .certificatesGrid { gap: 1.5rem; }
+ }
 
 /* === Responsive === */
 @media (max-width: 768px) {

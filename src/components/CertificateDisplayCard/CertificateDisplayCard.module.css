@@ -1,0 +1,118 @@
+/* src/components/CertificateDisplayCard/CertificateDisplayCard.module.css */
+
+/* Variables (ensure defined globally) */
+:root {
+    --indigo-bg: #101727;
+    --indigo-card-bg: #1f2937;
+    --indigo-border: #374151;
+    --indigo-text-main: #e6e9f0;
+    --indigo-text-soft: #a8b1cf;
+    --indigo-text-muted: #747e9b;
+    --violet-accent: #8b5cf6;
+  }
+  
+  .card {
+    background-color: var(--indigo-card-bg);
+    border-radius: 8px; /* Slightly less rounded */
+    overflow: hidden;
+    border: 1px solid var(--indigo-border);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.15); /* Standard shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px) scale(1.01); /* Lift/scale */
+    box-shadow: 0 8px 20px rgba(0,0,0, 0.2); /* Enhanced shadow */
+    border-color: #4b5563; /* Slightly lighter border */
+  }
+  
+  .imageLink {
+    display: block;
+    position: relative; /* For positioning indicator */
+    cursor: pointer;
+    background-color: var(--indigo-border); /* Fallback background */
+    /* Maintain aspect ratio for image consistency */
+    aspect-ratio: 16 / 10; /* Common presentation aspect ratio */
+     /* Or adjust to match most certs -> 11 / 8.5 is roughly 1.3 */
+    /* aspect-ratio: 11 / 8.5; */
+  }
+  
+  .cardImage {
+    display: block;
+    width: 100%;
+    height: 100%; /* Fill aspect ratio container */
+    object-fit: cover; /* Cover area, may crop */
+    /* Or use contain to show full image, might leave letterboxing */
+     /* object-fit: contain; */
+     /* background-color: #fff; If using contain for white certs */
+    transition: transform 0.4s ease, filter 0.3s ease;
+  }
+  .card:hover .cardImage {
+      transform: scale(1.03);
+      filter: brightness(1.05);
+  }
+  
+  .clickIndicator {
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      background-color: rgba(16, 23, 39, 0.7); /* Dark transparent bg */
+      color: var(--indigo-text-soft);
+      padding: 0.5rem;
+      border-radius: 50%;
+      line-height: 0; /* Prevents extra space */
+      font-size: 1rem; /* Icon size */
+      opacity: 0; /* Hidden by default */
+      transform: scale(0.8);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none; /* Allow clicking through */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .card:hover .clickIndicator {
+      opacity: 1;
+      transform: scale(1);
+  }
+  
+  .cardInfo {
+    padding: 1rem 1.3rem; /* Adjusted padding */
+    border-top: 1px solid var(--indigo-border);
+  }
+  
+  .cardTitle {
+    font-size: 0.95rem; /* Adjusted size */
+    font-weight: 600;
+    color: var(--indigo-text-main);
+    margin: 0 0 0.3rem 0;
+    line-height: 1.4;
+     /* Prevent overly long titles breaking layout badly */
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+  }
+  .cardTitle:hover { /* Show full title on hover maybe? */
+    /* white-space: normal; */
+  }
+  
+  .cardMeta {
+    font-size: 0.8rem;
+    color: var(--indigo-text-muted);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em 0.8em; /* Row/column gap */
+    line-height: 1.5;
+  }
+  /* Specific styles if needed */
+  /* .issuer {} */
+  /* .date {} */
+  
+  /* --- Responsive (Card Specific) --- */
+  /* Generally relies on the parent grid, but could adjust padding */
+  @media (max-width: 480px) {
+     .cardInfo { padding: 0.8rem 1rem; }
+     .cardTitle { font-size: 0.9rem; }
+     .cardMeta { font-size: 0.75rem; }
+     .clickIndicator { padding: 0.4rem; font-size: 0.9rem; top: 0.5rem; right: 0.5rem;}
+  }
