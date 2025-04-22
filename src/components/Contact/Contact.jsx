@@ -1,42 +1,60 @@
-// src/components/Contact/Contact.js
+// src/components/Contact/Contact.jsx
 import React from 'react';
 import styles from './Contact.module.css';
 
+// Import necessary icons
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
+import { MdLocationPin } from 'react-icons/md';
+import { PiDogFill } from "react-icons/pi"; // Dagshub substitute
+
 const Contact = () => {
-  // Add form state and handling logic later
   return (
     <section id="contact" className={styles.contact}>
-      <div className="container">
-        <h2>Get In Touch</h2>
+      <div className={`${styles.contactContainer} container`}>
+        <h2 className={styles.sectionTitle}>Get In Touch</h2>
         <p className={styles.contactIntro}>
-          Have a question or want to work together? Feel free to reach out!
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of your visions. Feel free to connect!
         </p>
-        {/* Simple contact info display - replace with a form later */}
-        <div className={styles.contactInfo}>
-          <p>
-            <strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a>
-          </p>
-          <p>
-            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-profile</a>
-          </p>
-           {/* Add GitHub or other links if desired */}
+
+        {/* Combined Contact Info: Social Links & Address */}
+        <div className={styles.contactDetails}>
+
+           {/* Social Links Section */}
+           <div className={styles.socialLinks}>
+             {/* Version 1: Icons only */}
+             <a href="YOUR_LINKEDIN_URL" /* ** UPDATE ** */ target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className={styles.socialLinkItem}><FaLinkedin /></a>
+             <a href="YOUR_LEETCODE_URL" /* ** UPDATE ** */ target="_blank" rel="noopener noreferrer" aria-label="LeetCode Profile" className={styles.socialLinkItem}><SiLeetcode /></a>
+             <a href="YOUR_FACEBOOK_URL" /* ** UPDATE ** */ target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" className={styles.socialLinkItem}><FaFacebook /></a>
+             <a href="https://github.com/arignan" /* ** UPDATE ** */ target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className={styles.socialLinkItem}><FaGithub /></a>
+             <a href="YOUR_DAGSHUB_URL" /* ** UPDATE ** */ target="_blank" rel="noopener noreferrer" aria-label="Dagshub Profile" className={styles.socialLinkItem}><PiDogFill /></a>
+             <a href="YOUR_INSTAGRAM_URL" /* ** UPDATE ** */ target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" className={styles.socialLinkItem}><FaInstagram /></a>
+
+              {/* --- OR --- */}
+             {/* Version 2: Icons with text (Uncomment below, comment above) */}
+             {/*
+             <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" className={styles.socialLinkItemText}> <FaLinkedin /> LinkedIn </a>
+             <a href="YOUR_LEETCODE_URL" target="_blank" rel="noopener noreferrer" className={styles.socialLinkItemText}> <SiLeetcode /> LeetCode </a>
+             <a href="YOUR_FACEBOOK_URL" target="_blank" rel="noopener noreferrer" className={styles.socialLinkItemText}> <FaFacebook /> Facebook </a>
+             <a href="https://github.com/arignan" target="_blank" rel="noopener noreferrer" className={styles.socialLinkItemText}> <FaGithub /> GitHub </a>
+             <a href="YOUR_DAGSHUB_URL" target="_blank" rel="noopener noreferrer" className={styles.socialLinkItemText}> <PiDogFill /> Dagshub </a>
+             <a href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener noreferrer" className={styles.socialLinkItemText}> <FaInstagram /> Instagram </a>
+             */}
+           </div>
+
+           {/* Address Section */}
+           <div className={styles.addressInfo}>
+               <MdLocationPin className={styles.addressIcon} aria-hidden="true"/>
+               <span>Kilinochchi, Sri Lanka</span>
+           </div>
         </div>
 
-        {/* Placeholder for a future form:
+        {/* Commented-out Form Placeholder */}
+        {/*
+        <h3 className={styles.formHeading}>Or Send a Message</h3>
         <form className={styles.contactForm}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" className={styles.submitButton}>Send Message</button>
+            // ... form fields ...
         </form>
         */}
       </div>

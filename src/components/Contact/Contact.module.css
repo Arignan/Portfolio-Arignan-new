@@ -1,86 +1,114 @@
-/* src/components/Contact/Contact.module.css */
+/* src/components/Contact/Contact.module.css - DEEP INDIGO & VIOLET THEME */
+
+/* --- VARIABLES --- */
+:root {
+  --indigo-bg: #2a304d;         /* Deep Indigo */
+  --indigo-border: #434c70;       /* Muted Indigo Border */
+  --indigo-text-main: #e6e9f0;    /* Light Cool Gray/White */
+  --indigo-text-soft: #a8b1cf;     /* Soft Indigo Gray */
+  --indigo-text-muted: #747e9b;    /* Muted Indigo Gray */
+  --violet-accent: #8b5cf6;       /* Vibrant Violet */
+  --violet-accent-hover: #a78bfa;  /* Lighter Violet */
+  --indigo-icon-bg: #394263;     /* Darker Icon BG */
+}
+
 .contact {
-    background-color: #e2e8f0; /* Match hero background? Or choose another */
-    padding-bottom: 100px; /* Extra space before footer */
-  }
-  
-  /* Use global h2 styling */
-  
-  .contactIntro {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 2.5rem auto; /* Center and add space below */
-    color: #4a5568;
-  }
-  
-  .contactInfo {
-     text-align: center;
-     margin-bottom: 3rem; /* Space before potential form */
-  }
-  
-  .contactInfo p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-  }
-  
-   .contactInfo a {
-     color: #4a90e2; /* Link color */
-     text-decoration: underline;
-   }
-  
-    .contactInfo a:hover {
-      color: #357abd;
-    }
-  
-  /* --- Styles for a future form (keep commented or implement later) --- */
-  /*
-  .contactForm {
-    max-width: 700px;
-    margin: 2rem auto 0 auto;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .formGroup {
-    margin-bottom: 1.5rem;
-  }
-  
-  .formGroup label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .formGroup input,
-  .formGroup textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .formGroup textarea {
-    resize: vertical;
-  }
-  
-  .submitButton {
-    display: inline-block;
-    background-color: #4a90e2;
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-  }
-  
-  .submitButton:hover {
-    background-color: #357abd;
-  }
-  */
+  background-color: var(--indigo-bg);
+  padding: 80px 0 90px 0; position: relative;
+  font-family: 'Poppins', sans-serif; /* Smooth Sans Serif */
+  color: var(--indigo-text-soft);
+  overflow: hidden; /* Needed for negative margin */
+}
+/* Import Poppins Font if needed */
+
+.contactContainer { max-width: 700px; text-align: center; margin: 0 auto;}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 700;
+  color: var(--indigo-text-main); margin-bottom: 1rem; letter-spacing: 0.3px;
+}
+
+.contactIntro {
+  font-size: clamp(1rem, 2.5vw, 1.1rem); color: var(--indigo-text-soft);
+  max-width: 550px; margin: 0 auto 3rem auto; line-height: 1.7;
+}
+
+.contactDetails {
+  display: flex; flex-direction: column; align-items: center; gap: 2rem;
+  /* Add slightly lighter section or padding for contrast */
+  background-color: rgba(67, 76, 112, 0.2); /* Transparent darker layer */
+  border: 1px solid var(--indigo-border);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  max-width: 550px; /* Contain details */
+  margin: 0 auto;
+}
+
+.socialLinks { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; } /* Slightly wider gap */
+
+/* Style 1: Icons only */
+.socialLinkItem {
+  display: inline-flex; font-size: 1.5rem; color: var(--indigo-text-soft);
+  padding: 0.7rem; /* Slightly more padding */
+  border: 1px solid var(--indigo-border);
+  border-radius: 50%; /* Circular icons */
+  background-color: var(--indigo-icon-bg);
+  transition: all 0.2s ease-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.socialLinkItem svg { display: block; }
+.socialLinkItem:hover {
+  color: #ffffff; /* White Icon */
+  border-color: var(--violet-accent);
+  background-color: var(--violet-accent);
+  transform: translateY(-4px) scale(1.08); /* More lift */
+  box-shadow: 0 5px 15px -3px hsla(257, 89%, 69%, 0.4); /* Violet shadow */
+}
+.socialLinkItem:focus-visible {
+  outline: none; border-color: var(--violet-accent);
+  box-shadow: 0 0 0 3px hsla(257, 89%, 69%, 0.3); /* Violet Focus Glow */
+}
+
+/* Style 2: Icons with text - keep commented out */
+/* .socialLinkItemText { ... } */
+
+.addressInfo { display: inline-flex
+  ;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #ced3e5;
+      border: 1px solid white;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: transparent;
+      box-shadow: inset 4px 4px 0px 0px #789cbf47, 4px 4px 0px 0px #7b9bbb54; }
+.addressIcon { font-size: 1.2rem; color: var(--indigo-text-muted); }
+
+
+/* --- Form Styles (Future Use) --- */
+.formHeading { font-size: 1.4rem; font-weight: 600; color: var(--indigo-text-main); margin-top: 3.5rem; margin-bottom: 1.8rem; text-align: center; }
+.contactForm { max-width: 600px; margin: 0 auto; padding: 0; background-color: transparent; border: none; box-shadow: none; text-align: left; }
+.formGroup { margin-bottom: 1.5rem; }
+.formGroup:last-of-type { margin-bottom: 1.8rem; }
+.formGroup label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.85rem; color: var(--indigo-text-soft); }
+.formGroup input, .formGroup textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--indigo-border); border-radius: 6px; font-size: 0.95rem; background-color: var(--indigo-icon-bg); /* Use dark bg */ color: var(--indigo-text-main); transition: border-color 0.2s ease, box-shadow 0.2s ease; box-shadow: inset 0 1px 2px rgba(0,0,0,0.2); }
+.formGroup input::placeholder, .formGroup textarea::placeholder { color: var(--indigo-text-muted); }
+.formGroup input:focus, .formGroup textarea:focus { outline: none; border-color: var(--violet-accent); box-shadow: 0 0 0 3px hsla(257, 89%, 69%, 0.25); }
+.formGroup textarea { resize: vertical; min-height: 110px; }
+
+.submitButton {
+  display: inline-flex; align-items: center; justify-content: center; width: 100%;
+  padding: 11px 26px; border: 1px solid transparent; border-radius: 6px;
+  font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; position: relative;
+  text-decoration: none; overflow: visible; transform-style: preserve-3d; transition: all 0.15s ease-out; z-index: 1;
+  background-color: var(--violet-accent); /* Violet Button */
+  color: #ffffff; /* White text */
+  box-shadow: 0 3px 5px hsla(257, 89%, 69%, 0.25), 0 1px 2px rgba(0,0,0,0.1);
+  transform: translateY(0px);
+}
+.submitButton:hover { background-color: #7c3aed; /* Darker Violet */ transform: translateY(-2px); box-shadow: 0 5px 10px hsla(257, 89%, 69%, 0.3), 0 2px 4px rgba(0,0,0,0.15); }
+.submitButton:active { transform: translateY(0px); box-shadow: 0 1px 2px hsla(257, 89%, 69%, 0.25), 0 0 1px rgba(0,0,0,0.1); }
+
+/* --- Responsive --- */
+@media (max-width: 768px) { .contact { padding: 70px 0 80px 0; } .sectionTitle { font-size: clamp(1.7rem, 5vw, 2.2rem); } .contactIntro { margin-bottom: 2.5rem; } .contactDetails { padding: 2rem 1rem; gap: 1.8rem; } .socialLinkItem { padding: 0.6rem; font-size: 1.4rem; } .addressInfo { font-size: 0.85rem; } }
