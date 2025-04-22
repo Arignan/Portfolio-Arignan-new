@@ -1,30 +1,29 @@
-/* src/components/Hero/Hero.module.css */
+/* src/components/Hero/Hero.module.css - ALTERNATIVE ACADEMIC/JOB FOCUSED THEME */
 
 /* === General Hero Styles === */
 .hero {
-  /* Using vh might cause issues on mobile viewports with toolbars, padding ensures space */
-  padding-top: calc(100px + 4vh); /* Space below navbar + extra viewport space */
-  padding-bottom: calc(60px + 4vh);
-  min-height: 85vh; /* Ensure minimum height but allow content growth */
+  padding-top: calc(90px + 5vh); /* Consistent padding */
+  padding-bottom: calc(70px + 5vh);
+  min-height: 85vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  /* Clean background */
-  background-color: #f8f9fc; /* Lighter off-white */
-   background-image: radial-gradient(circle at top left, #ffffff 20%, transparent 70%),
-                     radial-gradient(circle at bottom right, #e8eef7 0%, transparent 50%);
-  background-attachment: fixed; /* Fix gradients for a subtle parallax feel */
+  /* Very light, clean background */
+  background-color: #f7f8fc;
+  /* Optional faint texture */
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath fill='%23e2e8f0' fill-opacity='0.2' d='M M5 0 L6 0 L6 1 L5 1 Z M0 5 L1 5 L1 6 L0 6 Z'%3E%3C/path%3E%3C/svg%3E"); */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean UI Font */
 }
 
 .heroContainer {
   display: grid;
-  grid-template-columns: 1fr 0.8fr; /* Give text slightly more space (approx 55%/45%) */
+  grid-template-columns: 1.1fr 0.9fr; /* Give text a bit more emphasis */
   align-items: center;
-  gap: 3rem 4rem; /* Row and column gap */
-  max-width: 1150px; /* Slightly wider container */
-  width: 90%; /* Use percentage width */
-  margin: 0 auto; /* Center the container */
+  gap: 3rem 5rem; /* Increase column gap */
+  max-width: 1180px;
+  width: 90%;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
@@ -32,75 +31,105 @@
 /* === Text Content Area === */
 .heroTextContent {
   text-align: left;
-  position: relative; /* For potential future layering if needed */
+  position: relative;
 }
 
-/* --- Greeting & 3D Name Effect --- */
+/* --- Greeting & Dominant Name --- */
 .heroGreeting {
-  font-size: clamp(1.8rem, 5vw, 3rem); /* Slightly adjusted title size */
-  font-weight: 500; /* Less heavy weight */
-  margin-bottom: 0.5rem;
-  color: var(--text-light, #5a677d); /* Softer dark blue/gray */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Smaller greeting text */
+  font-weight: 400;
+  margin-bottom: 0.25rem; /* Tighten space */
+  color: #64748b; /* Muted gray */
   line-height: 1.3;
 }
 
+/* Dominant Name + Clean 3D */
 .highlight3d {
-  font-weight: 700; /* Make name stand out */
-  color: var(--primary-color, #2b6cb0); /* Darker, stronger blue */
-  display: inline-block;
+  font-size: clamp(2.8rem, 8vw, 5.5rem); /* Significantly larger name */
+  font-weight: 700; /* Bold */
+  color: #00225f; /* Very dark blue/black */
+  display: block; /* Make name its own block */
+  line-height: 1.1; /* Tight line height for large font */
+  margin-bottom: 0.75rem; /* Space below name */
   position: relative;
-  /* Refined 3D Shadow */
-  text-shadow:
-    1px 1px 0px hsla(210, 40%, 85%, 0.8), /* Light subtle highlight top-leftish */
-    2px 2px 0px hsla(210, 20%, 20%, 0.15), /* Darker shadow bottom-rightish */
-    3px 3px 3px hsla(210, 20%, 20%, 0.1); /* Diffused shadow */
-  transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
-  cursor: default; /* Indicate it's text */
+  /* Clean 3D effect: slightly offset hard shadow */
+  text-shadow: 3px 3px 0px rgb(255 255 255 / 90%), 6px 6px 2px rgb(129 129 129 / 50%); /* Light gray shadow, hard edge */
+  /* OR subtle inset for carving effect */
+  /* text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.8), 1px 1px 1px rgba(0, 0, 0, 0.1); */
+  /* color: #334155; */ /* If using inset, base color might be different */
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease-out, transform 0.3s ease-out; /* Smooth transition */
+  cursor: default;
   transform: translateZ(0);
 }
 
-.heroGreeting:hover .highlight3d {
-  /* Slightly enhance effect on hover */
-   text-shadow:
-    1px 1px 0px hsla(210, 40%, 90%, 0.9), /* Brighter highlight */
-    3px 3px 0px hsla(210, 20%, 20%, 0.20), /* Darker shadow */
-    4px 4px 4px hsla(210, 20%, 20%, 0.12);
-    color: var(--secondary-color, #2c5282); /* Slightly darker blue */
+.heroGreeting:hover .highlight3d { /* Naming convention might be off, just target .highlight3d hover */
+/* Or maybe target hover on the name itself */
+/* .highlight3d:hover { */
+   text-shadow: 4px 4px 0px rgb(255 255 255 / 90%), 7px 7px 2px rgb(129 129 129 / 50%); /* Enhance offset slightly */
+   color: #000e29; /* Slightly darker */
+   transform: translate(-1px, -1px); /* Lift effect */
 }
 
-/* --- Typing Animation Roles (as H2) --- */
+/* --- Typing Animation Roles - Framed --- */
 .heroRoles {
-  font-size: clamp(1.6rem, 5.5vw, 2.8rem); /* Larger, bolder roles */
-  font-weight: 700;
-  margin-bottom: 1.5rem; /* Space before intro */
-  color: var(--text-dark, #2d3748); /* Darker primary text color */
-  min-height: 1.5em; /* Adjust based on longest line's height */
-  line-height: 1.3;
+  margin-bottom: 2rem; /* Space before intro */
+  min-height: 2em; /* Based on line-height */
+  display: inline-block; /* Wrap content */
+  /* Frame the typing text */
+   /* padding: 0.3em 0.8em; */
+   /* border: 1px solid #cbd5e0; */
+   /* background-color: #e2e8f0; */
+   /* border-radius: 4px; */
+   /* OR simpler approach below */
 }
 
 .typingText {
-  /* Specific styles if needed beyond h2 styles */
+  display: inline-block;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 500; /* Semi-bold */
+  color: #7a4cff; /* Use primary color for emphasis */
+  padding: 0.2em 0; /* Minimal vertical padding */
+  border-bottom: 2px solid var(--primary-color-light, #93c5fd); /* Underline effect */
+  line-height: 1.5;
+  margin: 10px 0px 10px 0px;
 }
 /* Style cursor */
 .heroRoles [data-testid="typed"]::after {
-  border-color: var(--primary-color, #2b6cb0); /* Match accent */
-  animation-duration: 0.8s; /* Faster blink */
+  border-color: var(--primary-color, #3b82f6);
 }
 
-/* --- Introduction Paragraph --- */
+/* --- Introduction & Field Highlighting --- */
 .heroIntroduction {
-   font-size: clamp(1rem, 2vw, 1.15rem); /* Slightly larger base */
-   color: var(--text-light, #4a5568); /* Medium gray */
-   line-height: 1.8; /* Improve readability */
-   margin-bottom: 2.5rem; /* Space before actions */
-   max-width: 600px; /* Ensure readability */
+   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+   color: #475569; /* Darker Gray */
+   line-height: 1.7;
+   margin-bottom: 2.5rem;
+   max-width: 550px; /* Limit width */
 }
 
-/* --- Action Buttons - Refined 3D Style --- */
+.expertise {
+  font-weight: 600; /* Bold field names */
+  color: #fff;
+  position: relative;
+  white-space: nowrap; /* Prevent wrapping mid-phrase */
+  padding: 0.1em 0.2em; /* Minimal padding */
+  margin: 0 0.1em; /* Minimal margin */
+  border-radius: 6px;
+  background-color: hsl(210deg 100% 4.4% / 82%); /* Very subtle light blue background */
+  /* Add subtle bottom border that appears on hover */
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.heroIntroduction span.expertise:hover {
+    border-color: var(--primary-color-light, #3991f7); /* Show border */
+    background-color: hsl(210deg 100% 4.4% / 82%);
+}
+
+/* --- Action Buttons - Sharp 3D --- */
 .heroActions {
   display: flex;
-  gap: 1.2rem; /* Slightly less gap */
-  margin-bottom: 3rem;
+  gap: 1rem; /* Consistent gap */
+  margin-bottom: 2.5rem;
   flex-wrap: wrap;
 }
 
@@ -108,19 +137,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px; /* Adjust padding */
-  border: none;
-  border-radius: 8px; /* Less rounded, more modern 'button' feel */
-  font-size: 0.95rem;
+  padding: 12px 26px;
+  border: 1px solid transparent; /* Base border */
+  border-radius: 15px; /* Slightly sharp radius */
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.5px; /* Add slight letter spacing */
+  letter-spacing: 0.4px;
   cursor: pointer;
   position: relative;
   text-decoration: none;
-  overflow: visible; /* Allow shadow to extend */
-  transform-style: preserve-3d;
-  transition: transform 0.1s ease-out, box-shadow 0.15s ease-out, background-color 0.2s ease;
-  z-index: 1; /* Ensure buttons are above backgrounds */
+  transform-style: preserve-3d; /* Needed for icon */
+  /* Sharper inset effect for thickness */
+  box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, background-color 0.15s ease;
+  z-index: 1;
 }
 
 .buttonIcon {
@@ -128,156 +158,154 @@
    font-size: 1.1em;
    position: relative;
    z-index: 1;
+   transition: transform 0.2s ease-out; /* Add transition to icon */
 }
 
-.ctaButton {
-    color: #fff;
-    /* Simplified but effective shadow */
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-    /* Subtle 3D effect with translateZ - might need parent perspective */
-    /* transform: translateZ(10px); */
-    /* Let's stick to Y-translation for hover press */
-    transform: translateY(0px);
-}
-
-/* Specific Button Colors */
+/* Specific Button Colors & Styles */
 .resumeButton {
-  background-color: var(--primary-color, #2b6cb0); /* Darker Blue */
-}
-.resumeButton:hover {
-   background-color: var(--secondary-color, #2c5282); /* Even Darker Blue */
+  background-color: var(--primary-color, #3b82f6); /* Primary Blue */
+  border-color: var(--primary-color, #3b82f6);
+  color: #fff;
+  box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.2), /* Darker inset */
+              0 4px 8px rgba(59, 130, 246, 0.2); /* Colored subtle glow/shadow */
 }
 .contactButton {
-  background-color: #38a169; /* Green */
-}
-.contactButton:hover {
-   background-color: #2f855a; /* Darker Green */
+  background-color: #e2e8f0; /* Light Gray */
+  border-color: #cbd5e0; /* Slightly darker border */
+  color: #334155; /* Darker Gray Text */
+   box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.1); /* Lighter inset shadow */
 }
 
-/* Button Hover & Active (Press) */
+/* Hover & Active (Press) */
 .ctaButton:hover {
-  transform: translateY(-2px); /* Lift slightly */
-   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px); /* Lift */
+   /* Adjust shadow on hover */
+    box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.1), /* Keep some depth */
+              0 6px 12px rgba(59, 130, 246, 0.15); /* Enhance glow */
+}
+.contactButton:hover { /* Specific hover for secondary */
+  background-color: #f1f5f9; /* Slightly different gray */
+  border-color: #94a3b8;
+   box-shadow: inset 0 -3px 0px rgba(0, 0, 0, 0.08),
+              0 3px 6px rgba(0, 0, 0, 0.05); /* Less glow */
 }
 .ctaButton:active {
     transform: translateY(1px); /* Press down */
-     box-shadow: 0 2px 4px rgba(50, 50, 93, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+     /* Flatten shadow significantly */
+     box-shadow: inset 0 -1px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Social Links --- */
+/* --- Specific Icon Hover Transforms --- */
+.resumeButton:hover .buttonIcon {
+  transform: translateY(2px); /* Download effect */
+}
+.contactButton:hover .buttonIcon {
+  transform: translate(2px, -2px) rotate(15deg); /* Contact effect */
+}
+
+/* --- Social Links - Minimalist Interactive --- */
 .heroSocials {
   display: flex;
-  align-items: center; /* Align label and icons */
-  gap: 0.8rem; /* Closer spacing */
-  flex-wrap: wrap; /* Allow wrapping if needed */
+  align-items: center;
+  gap: 0.5rem; /* Closer */
+  flex-wrap: wrap;
+  border-top: 1px solid #e2e8f0; /* Separator line */
+  padding-top: 1.5rem;
+  margin-top: 1rem; /* Bring closer to buttons */
 }
 
 .socialsLabel {
-   font-size: 0.9rem;
-   color: var(--text-light, #718096);
-   margin-right: 0.5rem;
+   font-size: 0.8rem;
+   color: #94a3b8; /* Muted */
+   margin-right: 0.4rem;
    font-weight: 500;
+   text-transform: uppercase;
 }
 
 .socialLink {
-  color: var(--text-light, #718096);
-  font-size: 1.5rem; /* Slightly smaller icons */
-  padding: 0.3rem; /* Add padding for touch targets */
-  transition: color 0.2s ease, transform 0.2s ease;
-  display: inline-block;
-  border-radius: 50%; /* For focus outline */
+  color: #94a3b8; /* Muted default */
+  font-size: 1.3rem; /* Smaller default icons */
+  padding: 0.5rem; /* Increase tappable area */
+  transition: all 0.2s ease;
+  display: flex; /* Align icon within padding */
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent; /* Placeholder for hover */
+  border-radius: 6px; /* Match buttons */
+  background-color: transparent;
 }
 
 .socialLink:hover {
-  color: var(--primary-color, #2b6cb0);
-  transform: scale(1.1); /* Scale instead of lift */
+  color: var(--primary-color, #3b82f6); /* Primary color on hover */
+  transform: scale(1.1) translateY(-1px); /* Subtle lift/scale */
+  background-color: hsla(217, 91%, 93%, 0.5); /* Very faint blue background */
+  border-color: #dbeafe; /* Light blue border */
 }
-.socialLink:focus-visible { /* Modern focus style */
-   outline: 2px solid var(--primary-color, #2b6cb0);
-   outline-offset: 2px;
+.socialLink:focus-visible {
+   outline: none; /* Remove default */
+   border-color: var(--primary-color, #3b82f6);
+   box-shadow: 0 0 0 2px hsla(217, 91%, 93%, 0.8); /* Focus ring */
 }
 
 /* === Image Area === */
 .heroImageContainer {
   display: flex;
-  justify-content: center; /* Center H */
-  align-items: flex-start; /* Align to top, looks better with unequal text height */
+  justify-content: center;
+  align-items: center; /* Keep centered vertically */
   position: relative;
-  padding-top: 1rem; /* Give image some space from top */
 }
 
 .profileImage {
   width: 100%;
-  max-width: 340px; /* Adjust size */
-  height: auto;
+  max-width: 350px; /* Consistent max width */
   aspect-ratio: 1 / 1;
-  border-radius: 25px 133px 132px 133px; /* Organic shape */
+  /* More structured shape - Rounded Square */
+   border-radius: 24px; /* Adjust roundness */
+  /* border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%; */ /* Organic if preferred */
   object-fit: cover;
-  border: none; /* Remove border */
-  /* Soft, diffused shadow for floating effect */
-   box-shadow: 0px 30px 60px -10px rgba(43, 108, 176, 0.25), /* Colored shadow based on primary */
-              0px 15px 30px -15px rgba(0, 0, 0, 0.2); /* General ambient shadow */
+  border: none;
+  /* Clean, simple shadow */
+  box-shadow: 0px 10px 25px -5px rgba(15, 23, 42, 0.1), /* Darker shadow */
+              0px 5px 15px -5px rgba(15, 23, 42, 0.07); /* Softer spread */
   position: relative;
   z-index: 1;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  /* Optional: Desaturate slightly for professional feel */
+   /* filter: saturate(85%); */
 }
 
 .heroImageContainer:hover .profileImage {
-   transform: scale(1.03) translateY(-8px); /* Slightly lift/scale image */
-    box-shadow: 0px 40px 70px -10px rgba(43, 108, 176, 0.3), /* Enhance colored shadow */
-              0px 20px 40px -15px rgba(0, 0, 0, 0.25);
+   transform: scale(1.025) rotate(0.5deg); /* Very subtle scale/rotate */
+    /* Slightly enhance shadow on hover */
+    box-shadow: 0px 12px 30px -5px rgba(15, 23, 42, 0.12),
+                0px 6px 18px -5px rgba(15, 23, 42, 0.08);
+   /* filter: saturate(100%); */ /* Full saturation on hover */
 }
+
 
 /* === Responsive Adjustments === */
 @media (max-width: 992px) {
     .heroContainer {
        grid-template-columns: 1fr; /* Stack */
        gap: 2.5rem;
-       width: 90%; /* Consistent width */
+       width: 90%;
        text-align: center;
     }
-    .heroTextContent {
-       order: 2; /* Text below image */
-       text-align: center;
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-    }
-    .heroImageContainer {
-       order: 1; /* Image first */
-       max-width: 50%; /* Limit image size relative to screen */
-       margin: 0 auto;
-       align-items: center; /* Re-center vertical align for mobile */
-    }
-    .heroIntroduction {
-        max-width: 90%; /* Allow wider text on mobile */
-    }
-     .heroActions {
-        justify-content: center;
-    }
-     .heroSocials {
-        justify-content: center;
-        gap: 1rem;
-     }
-     .socialLink {
-         font-size: 1.6rem;
-     }
+    .heroTextContent { order: 2; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .heroImageContainer { order: 1; max-width: 50%; margin: 0 auto; }
+    .heroIntroduction { max-width: 85%; }
+    .heroActions { justify-content: center; }
+    .heroSocials { justify-content: center; padding-top: 1.5rem; border-top: 1px solid #e2e8f0;} /* Keep border */
 }
 
 @media (max-width: 480px) {
-   .heroImageContainer {
-      max-width: 65%; /* Adjust further */
-   }
+   .heroImageContainer { max-width: 60%; }
    .profileImage {
-       /* Shape might look weird if too small, consider reverting to 50% radius */
-        border-radius: 25px 133px 132px 133px;
+      max-width: 200px;
+      border-radius: 16px; /* Adjust if needed */
    }
-   .heroActions {
-       flex-direction: column;
-       width: 100%;
-       max-width: 300px;
-   }
-    .ctaButton {
-       width: 100%;
-    }
+   .heroActions { flex-direction: column; width: 100%; max-width: 280px; gap: 1rem; }
+   .ctaButton { width: 100%; }
+    .heroSocials { gap: 0.6rem; border-top: none; padding-top: 0.5rem;} /* Maybe remove border on smallest */
+    .socialLink { font-size: 1.4rem; }
 }

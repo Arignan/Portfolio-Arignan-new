@@ -49,8 +49,8 @@ const Hero = () => {
           {/* Introduction Paragraph - RE-ADDED */}
           <p className={styles.heroIntroduction}>
             I specialize in transforming complex challenges into elegant,
-            scalable solutions through cross-disciplinary expertise in Artificial
-            Intelligence, Data Science, and Software Engineering.
+            scalable solutions through cross-disciplinary expertise in <span className={styles.expertise}>Artificial
+            Intelligence</span>, <span className={styles.expertise}>Data Science</span>, and <span className={styles.expertise}>Software Engineering</span>.
           </p>
 
           {/* Action Buttons */}
