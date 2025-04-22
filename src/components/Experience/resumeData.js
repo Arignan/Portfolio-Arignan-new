@@ -3,10 +3,10 @@
 export const experience = [
     {
       id: 1,
-      title: "Software Engineer",
+      title: "AI Engineer",
       company: "Tech Solutions Inc.",
-      location: "San Francisco, CA",
-      years: "Jan 2022 - Present", // Or { start: 'Jan 2022', end: 'Present' }
+      location: "Germany, Bavaria, Munich", // Optional location
+      years: "Oct 2025 - Present", // Or { start: 'Jan 2022', end: 'Present' }
       responsibilities: [
         "Developed and maintained web applications using React, Node.js, and MongoDB.",
         "Collaborated with cross-functional teams to define, design, and ship new features.",
@@ -16,10 +16,10 @@ export const experience = [
     },
     {
       id: 2,
-      title: "Junior Web Developer",
-      company: "Web Wizards Co.",
+      title: "Junior Machine Learning Engineer (Volunteer)",
+      company: "Omdena.",
       location: "Remote",
-      years: "May 2020 - Dec 2021",
+      years: "Feb 2024 - Current",
       responsibilities: [
         "Assisted senior developers in building responsive websites using HTML, CSS, and JavaScript.",
         "Tested websites across various browsers and devices.",
