@@ -33,8 +33,8 @@ export const experience = [
     {
       id: 1,
       institution: "University of Technology",
-      degree: "B.S. in Computer Science",
-      location: "New York, NY",
+      degree: "B.S. in Aritificial Intelligence",
+      location: "Germany, Bavaria, Munich",
       years: "2025 - 2028",
       description: "Relevant coursework: Data Structures, Algorithms, Web Development, Database Management. Dean's List all semester." // Optional details
     },
@@ -44,21 +44,21 @@ export const experience = [
       degree: "Full-Stack Web Development Certificate",
       location: "Online",
       years: "2024-Current",
-      description: "Completed an intensive bootcamp covering MERN stack development."
+      description: "Completed an full coursework covering MERN stack development."
     },
     {
       id: 3,
       institution: "Kilinochchi Maha Vidyalayam",
-      degree: "A/L in (Mathematics Physics Chemistry)",
-      location: "Online",
+      degree: "G.C.E Advanced Level",
+      location: "Kilinochchi, Sri Lanka",
       years: "2018 - 2020",
       description: "Combined Mathematics, Physics, Chemistry , ICT, English."
     },
     {
       id: 4,
       institution: "Kilinochchi Vivekanantha Vidyalayam",
-      degree: "O/L in (Mathematics Science English)",
-      location: "Online",
+      degree: "G.C.E Ordinary Level",
+      location: "Kilinochchi, Sri Lanka",
       years: "2011 - 2017",
       description: "Mathematics, Science, ICT , English, Commerce."
     },

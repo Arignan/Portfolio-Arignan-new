@@ -1,50 +1,213 @@
-/* src/components/Education/Education.module.css */
+/* src/components/Education/Education.module.css - INTERCONNECTED BLOCKS (DARK) */
+
 .education {
-    background-color: #fff; /* Match About section? Or choose another */
-    padding: 60px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Using global h2 style */
-  /* .education h2 { ... } */
-  
-  .educationList {
-    max-width: 800px; /* Consistent width */
-    margin: 2rem auto 0 auto;
-    display: grid;
-    gap: 1.5rem; /* Space between education entries */
-  }
-  
-  .educationItem {
-    background-color: #f9fafb; /* Light background for items */
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 5px solid var(--primary-color, #4a90e2); /* Accent border */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  
-  .educationItem h3 {
-    margin-top: 0;
-    font-size: 1.2rem;
-    color: var(--text-dark, #333);
-    margin-bottom: 0.25rem;
-  }
-  
-  .institution {
-    font-weight: 500;
-    color: var(--primary-color, #4a90e2);
-    margin-bottom: 0.25rem;
-  }
-  
-  .years {
-    font-size: 0.9rem;
-    color: var(--text-light, #666);
-    margin-bottom: 0.75rem;
-  }
-  
-  .description {
-     font-size: 0.95rem;
-     color: var(--text-light, #555);
-     margin-bottom: 0;
-     line-height: 1.5;
-  }
+  background-color: #101727; /* Dark Background */
+  padding: 90px 0 110px 0; /* Adjust padding */
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  color: #b0bec5; /* Default soft gray */
+  overflow: hidden; /* Contain effects */
+  border-bottom: 1px solid #2d3748;
+}
+/* Import Inter font */
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  font-weight: 700;
+  color: #eceff1; /* White Title */
+  margin-bottom: 4.5rem;
+  position: relative;
+}
+
+/* Container for all entries */
+.educationContainer {
+  max-width: 800px; /* Control width */
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Add a subtle connecting line - different from timeline */
+.educationContainer::before {
+  content: '';
+  position: absolute;
+  left: 15px; /* Position near the offset years */
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(75, 85, 99, 0.4) 10%, /* Fade in */
+    rgba(75, 85, 99, 0.4) 90%, /* Solid */
+    transparent          /* Fade out */
+  );
+  z-index: 0;
+}
+
+
+/* Wrapper for each education entry */
+.educationEntry {
+  position: relative; /* For positioning children absolutely */
+  padding: 1rem 0 2.5rem 60px; /* Add left padding for offset years + gap */
+  /* border-bottom: 1px solid #2d3748; Optional internal separator */
+}
+.educationEntry:last-child {
+  padding-bottom: 1rem; /* Reduce bottom padding */
+   /* border-bottom: none; */
+}
+
+
+/* Years Block - Positioned Absolutely */
+.entryYears {
+  position: absolute;
+  left: 0; /* Align to the container edge */
+  top: 1.2rem; /* Align near top of entry */
+  transform: translateX(-20%); /* Slightly pull left from padding edge */
+  z-index: 2; /* Above line */
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #49bbac; /* Accent color */
+  background-color: #1f293787; /* Card-like background */
+  padding: 0.4em 0.8em;
+  border-radius: 15px; /* Pill shape */
+  border: 1px solid #717579;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  box-shadow: 3px 3px 10px 0px rgb(0 0 0 / 57%);
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+.educationEntry:hover .entryYears {
+   transform: translateX(-20%) scale(1.005);
+    color: #ffffff; /* Dark text */
+    background-color: var(--primary-accent, #01010249); /* Filled accent */
+    border-color: var(--primary-accent, #ffffff);
+}
+
+/* Main details block */
+.entryDetails {
+  background-color: rgba(31, 41, 55, 0.6); /* Semi-transparent dark */
+  border-radius: 8px;
+  padding: 1.5rem 2rem; /* Padding inside the block */
+  border: 1px solid transparent; /* Start transparent */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  position: relative; /* Needed for inner elements */
+  min-height: 100px; /* Ensure some base height */
+}
+.educationEntry:hover .entryDetails {
+  background-color: rgba(31, 41, 55, 0.8); /* Darker */
+   border-color: #4b5563; /* Show border */
+}
+
+/* Degree & Institution Block */
+.degreeInstitution {
+  display: flex;
+  align-items: flex-start; /* Align top */
+  gap: 0.8rem;
+  margin-bottom: 0.6rem; /* Space before location */
+}
+
+.degreeIcon {
+  font-size: 1.6rem;
+  color: #94a3b8; /* Muted default */
+  margin-top: 2px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+.educationEntry:hover .degreeIcon {
+    color: var(--primary-accent, #60a5fa); /* Brighten on hover */
+     transform: scale(1.1);
+}
+
+
+.degreeInstitution h3 { /* Degree */
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 600;
+  color: #eceff1; /* White text */
+  margin: 0;
+  line-height: 1.3;
+}
+
+.institution { /* Below degree */
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #b0bec5; /* Default soft gray */
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+/* Location Text */
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9rem;
+  color: #94a3b8; /* Muted */
+  margin: 0 0 1rem 0; /* Bottom margin */
+  padding-left: calc(1.6rem + 0.8rem); /* Indent like degree, based on icon + gap */
+}
+
+/* Small meta icons in Location/Years */
+.metaIcon {
+  font-size: 1em;
+  color: #6b7280; /* Muted gray */
+}
+
+/* Description */
+.description {
+  font-size: 0.9rem;
+  color: #94a3b8; /* Slightly lighter description */
+  line-height: 1.7;
+  margin: 0;
+  padding-top: 1rem; /* Space above */
+  padding-left: calc(1.6rem + 0.8rem); /* Indent based on icon + gap */
+  border-top: 1px dashed #374151; /* Separator before description */
+}
+
+
+.noEducation {
+  text-align: center;
+  color: #94a3b8;
+  padding: 3rem;
+}
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .educationContainer::before { left: 5px; } /* Move line closer */
+    .educationEntry { padding-left: 40px; /* Adjust overall padding */ padding-bottom: 2rem;}
+    .entryYears {
+        position: relative; /* Stack years on top */
+        left: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 1rem; /* Space below years */
+        display: inline-flex; /* Don't take full width */
+        transform: none !important; /* Override hover transform */
+        background-color: #1f2937; /* Revert styles for static state */
+        color: var(--primary-accent, #60a5fa);
+        border-color: #374151;
+    }
+     .educationEntry:hover .entryYears { /* Reset specific hover styles */
+          color: var(--primary-accent, #60a5fa);
+          background-color: #1f2937;
+          border-color: #374151;
+     }
+
+     .entryDetails { padding: 1.2rem 1.5rem; }
+     .degreeInstitution h3 { font-size: 1.2rem; }
+     .institution { font-size: 0.9rem; }
+      .location { padding-left: 0; } /* Remove indent when stacked */
+     .description { padding-left: 0; padding-top: 0.8rem;}
+}
+
+@media (max-width: 480px) {
+   .sectionTitle { font-size: clamp(1.7rem, 5vw, 2.2rem); margin-bottom: 3rem;}
+   .educationEntry { padding-left: 30px; }
+   .entryYears { font-size: 0.75rem; padding: 0.3em 0.7em;}
+   .location, .institution, .description { font-size: 0.85rem; }
+}
