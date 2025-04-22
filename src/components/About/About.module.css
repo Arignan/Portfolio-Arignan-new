@@ -1,45 +1,209 @@
-/* src/components/About/About.module.css */
+/* src/components/About/About.module.css - UNIFIED STATS & POLISHED (DARK) */
+
+/* --- Variables (ensure defined) --- */
+:root {
+  --indigo-bg: #101727;
+  --indigo-card-bg: #1f2937;
+  --indigo-border: #374151;
+  --indigo-text-main: #e6e9f0;
+  --indigo-text-soft: #a8b1cf;
+  --indigo-text-muted: #747e9b;
+  --violet-accent: #8b5cf6;
+  --violet-accent-hover: #a78bfa;
+  --teal-accent: #14b8a6; /* Teal for Curiosity Tags? */
+}
+
 .about {
-    background-color: #fff; /* White background for contrast */
-  }
-  
-  /* Use global h2 styling, no need to repeat */
-  
-  .aboutContent {
-    display: grid; /* Use grid for layout */
-    grid-template-columns: 1fr 2fr; /* Image column, Text column */
-    gap: 2rem; /* Space between grid items */
-    align-items: center; /* Vertically align items in the grid */
-  }
-  
-  .aboutImage img {
-    max-width: 250px; /* Control image size */
-    border-radius: 50%; /* Make it circular */
-    margin: 0 auto; /* Center if needed */
-    border: 5px solid #eee; /* Optional border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .aboutText p {
-    margin-bottom: 1rem; /* Space between paragraphs */
-    font-size: 1rem;
-    color: #555; /* Slightly lighter text */
-  }
-  
-  .aboutText p:last-child {
-    margin-bottom: 0;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .aboutContent {
-      grid-template-columns: 1fr; /* Stack columns */
-      text-align: center;
-    }
-    .aboutImage {
-      margin-bottom: 2rem; /* Space below image when stacked */
-    }
-     .aboutImage img {
-       max-width: 200px;
-     }
-  }
+  background-color: #000727;
+  padding: 90px 0 100px 0;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  color: var(--indigo-text-soft);
+  border-bottom: 1px solid var(--indigo-border);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  font-weight: 700;
+  color: var(--indigo-text-main);
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/* --- Unified Stats Section --- */
+.statsSection {
+   max-width: 900px; /* Control width of the stat block */
+   margin: 0 auto 4.5rem auto; /* Center and margin below */
+}
+/* StatBlock internal styling is in its own module */
+
+/* === Curiosity Section - Tag Cloud Style === */
+.curiositySection {
+  max-width: 800px; /* Container width */
+  margin: 0 auto 4.5rem auto;
+  text-align: center; /* Center heading and topics */
+  border-top: 1px solid var(--indigo-border); /* Separators */
+  border-bottom: 1px solid var(--indigo-border);
+  padding: 3rem 0;
+}
+
+/* Shared Sub-Heading Style */
+.subHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--indigo-text-main);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem; /* Space below heading */
+  position: relative;
+  display: inline-block; /* Contain underline */
+}
+/* Optional underline for subheading */
+.subHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; /* Position below text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px; /* Underline width */
+  height: 2px;
+  background-color: var(--violet-accent); /* Use accent */
+}
+
+.topicsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow tags to wrap */
+  gap: 0.75rem; /* Gap between tags */
+  margin-bottom: 2rem; /* Space below tags */
+}
+
+.topicTag {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--teal-accent, #14b8a6); /* Teal accent for tags */
+  background-color: rgba(20, 184, 166, 0.1); /* Teal faint bg */
+  padding: 0.4em 0.9em;
+  border-radius: 15px; /* Pill shape */
+  border: 1px solid rgba(20, 184, 166, 0.2); /* Teal faint border */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: default; /* Indicate they are not links */
+}
+.topicTag:hover {
+    transform: translateY(-2px);
+    background-color: rgba(20, 184, 166, 0.15);
+}
+
+.curiosityFooter {
+  font-size: 0.95rem; /* Slightly larger */
+  color: var(--indigo-text-muted);
+  font-style: normal; /* Remove italic */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* === Achievements Section - Polished List === */
+.achievementsSection {
+  max-width: 750px; /* Control list width */
+  margin: 0 auto;
+}
+
+.achievementsSection .subHeading { /* Reuse subheading style */
+  margin-bottom: 2.5rem;
+}
+
+.achievementsList {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 1.2rem; /* Space between items */
+}
+
+.achievementItem { /* Renamed class */
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: transparent; /* No background */
+  padding: 0.8rem 0; /* Vertical padding, no horizontal */
+  border-bottom: 1px solid var(--indigo-border); /* Bottom separator */
+  transition: border-color 0.3s ease;
+  position: relative;
+}
+.achievementsList > li:last-child {
+  border-bottom: none;
+}
+.achievementsList > li:hover {
+  border-bottom-color: var(--violet-accent); /* Highlight border */
+}
+
+/* Add a subtle effect line that appears on hover */
+.achievementItem::after {
+   content: '';
+   position: absolute;
+   bottom: -1px; /* Align with border */
+   left: 0;
+   height: 2px;
+   width: 0; /* Hidden initially */
+   background-color: var(--violet-accent);
+   transition: width 0.3s ease-out;
+}
+.achievementItem:hover::after {
+    width: 50px; /* Reveal line on hover */
+}
+
+
+.achievementIcon { /* Renamed class */
+  font-size: 1.3rem;
+  color: var(--violet-accent);
+  background-color: rgba(139, 92, 246, 0.1); /* Accent faint bg */
+  padding: 0.5rem; /* Padding around icon */
+  border-radius: 50%;
+  line-height: 1; /* Helps centering */
+  flex-shrink: 0;
+}
+
+.achievementText { /* Renamed class */
+  flex-grow: 1;
+}
+
+.achievementTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--indigo-text-main);
+  display: block;
+}
+
+.achievementIssuer {
+  font-size: 0.8rem;
+  color: var(--indigo-text-muted);
+  display: block;
+  margin-top: 0.2rem;
+  font-style: normal; /* Remove italic */
+}
+
+.noAchievements {
+  text-align: center; color: var(--indigo-text-muted);
+  padding: 1.5rem 0;
+}
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+   .about { padding: 80px 0; }
+   .sectionTitle { margin-bottom: 3rem; }
+   .statsSection { margin-bottom: 3.5rem; }
+   .curiositySection, .achievementsSection { max-width: 90%; /* Allow more width */}
+   .curiositySection { padding: 2.5rem 0; margin-bottom: 3.5rem;}
+   .subHeading { font-size: 0.9rem; margin-bottom: 1.8rem; }
+   .subHeading::after { width: 30px; bottom: -5px;}
+   .topicsContainer { gap: 0.6rem; margin-bottom: 1.5rem;}
+   .topicTag { font-size: 0.85rem; padding: 0.3em 0.7em; }
+   .curiosityFooter { font-size: 0.9rem; }
+   .achievementsSection { margin-top: 0; } /* Remove potential top margin */
+   .achievementsList { gap: 1rem;}
+   .achievementItem { padding: 0.7rem 0; gap: 1rem;}
+   .achievementTitle { font-size: 0.95rem; }
+   .achievementIssuer { font-size: 0.75rem; }
+}
+/* 480px adjustments if needed */

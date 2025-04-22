@@ -1,0 +1,141 @@
+/* src/components/StatBlock/StatBlock.module.css - Dark Theme */
+
+/* Variable Check - ensure accessible */
+:root {
+  --indigo-bg: #101727;
+  --indigo-card-bg: #1f2937;
+  --indigo-border: #374151;
+  --indigo-text-main: #e6e9f0;
+  --indigo-text-soft: #a8b1cf;
+  --indigo-text-muted: #747e9b;
+  --violet-accent: #8b5cf6;
+  --violet-accent-hover: #a78bfa;
+  --green-update: #10b981;
+}
+
+
+.statBlockContainer {
+  background: linear-gradient(145deg, #1f2937, #111827); /* Gradient background */
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  border: 1px solid var(--indigo-border);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2), 0 4px 10px rgba(0,0,0,0.15);
+  position: relative;
+  display: grid; /* Use grid for layout */
+  grid-template-columns: 1fr auto 1fr; /* Left Col | Separator | Right Col */
+  align-items: start; /* Align categories to top */
+  gap: 2rem; /* Gap between columns */
+}
+
+/* Update indicator positioning on the main container */
+.updateIndicator {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 8px; height: 8px; background-color: var(--green-update);
+  border-radius: 50%; border: 1px solid var(--indigo-bg);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 1);
+  animation: pulse-green-statblock 2s infinite;
+}
+@keyframes pulse-green-statblock { /* Renamed to avoid conflict */
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Stat Category Styling */
+.statCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between items within category */
+}
+
+.categoryTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--violet-accent); /* Accent Color for Title */
+  margin: 0 0 0.5rem 0; /* Space below title */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--indigo-border);
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Individual Stat Item Styling */
+.statItem {
+  display: grid; /* Grid for icon/label/value alignment */
+  grid-template-columns: auto 1fr auto; /* Icon | Label | Value */
+  align-items: baseline; /* Align text baselines */
+  gap: 0.75rem; /* Gap between elements */
+  padding: 0.2rem 0; /* Minimal vertical padding */
+  transition: color 0.2s ease;
+}
+/* Hover effect maybe on item? */
+/* .statItem:hover { color: var(--indigo-text-main); } */
+
+.itemIcon {
+  font-size: 1.1rem;
+  color: var(--indigo-text-muted); /* Muted icon color */
+  line-height: 1; /* Align icon */
+  transition: color 0.2s ease;
+}
+/* .statItem:hover .itemIcon { color: var(--violet-accent); } */
+
+
+.itemLabel {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--indigo-text-soft); /* Soft gray label */
+  text-align: left;
+  line-height: 1.3;
+}
+
+.itemValue {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--indigo-text-main); /* Bright value */
+  text-align: right;
+  line-height: 1;
+}
+
+/* Visual Separator between categories */
+.separator {
+  width: 1px;
+  background-color: var(--indigo-border);
+  /* Use margin to control height relative to container padding */
+   margin: 0.5rem 0;
+   height: calc(100% - 1rem); /* Approx height based on padding */
+   align-self: stretch; /* Make it take full column height */
+}
+
+/* Responsive adjustments for Stat Block */
+@media (max-width: 768px) {
+  .statBlockContainer {
+    grid-template-columns: 1fr; /* Stack categories */
+    gap: 1.5rem; /* Gap between stacked categories */
+    padding: 1.8rem;
+  }
+  .separator {
+      width: 80%; /* Make separator a horizontal line */
+      height: 1px;
+      margin: 0 auto; /* Center horizontally */
+      align-self: center; /* Override stretch */
+  }
+   .categoryTitle { text-align: center; }
+   .itemValue { font-size: 1.3rem;}
+   .itemLabel { font-size: 0.85rem;}
+}
+
+@media (max-width: 480px) {
+    .statItem {
+      /* Optional: Stack icon above label/value maybe? */
+       /* grid-template-columns: 1fr auto; */ /* Label | Value */
+       /* grid-template-rows: auto auto; */ /* Icon \n Label/Value */
+       gap: 0.5rem; /* Reduce gap */
+    }
+    /* If stacking icon: */
+    /* .itemIcon { grid-row: 1; grid-column: 1 / -1; margin-bottom: 0.2rem; font-size: 1rem;} */
+    /* .itemLabel { grid-row: 2; grid-column: 1;} */
+    /* .itemValue { grid-row: 2; grid-column: 2;} */
+
+    .itemValue { font-size: 1.2rem;}
+}
