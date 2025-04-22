@@ -1,31 +1,95 @@
-/* src/components/Footer/Footer.module.css */
+/* src/components/Footer/Footer.module.css - ENHANCED DARK CONTRAST THEME */
+
 .footer {
-    background-color: #333; /* Dark footer */
-    color: #ccc; /* Light gray text */
-    padding: 2rem 0;
-    text-align: center;
-  }
-  
-  .footerContent {
-    max-width: 800px; /* Centered content width */
-    /* Optional: can use flex/grid if layout gets complex */
-  }
-  
-  .socialLinks {
-     margin-bottom: 1rem;
-  }
-  
-  .socialLinks a {
-    color: #ccc;
-    margin: 0 0.75rem;
-    font-size: 1.2rem; /* Make icons/links slightly larger */
-    transition: color 0.3s ease;
-  }
-  
-  .socialLinks a:hover {
-    color: #4a90e2; /* Highlight color */
-  }
-  
-  .copyright {
-    font-size: 0.9rem;
-  }
+  /* Match Experience/Education Background */
+  background-color: #101727; /* Dark Base */
+  color: #94a3b8; /* Softer gray default text */
+  padding: 3rem 0 2rem 0; /* Adjust vertical padding */
+  font-family: 'Inter', sans-serif; /* Consistent font */
+  text-align: center;
+  border-top: 1px solid #2d3748; /* Separator from content above */
+}
+
+.footerContainer {
+  /* Use global .container's max-width and centering */
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center content horizontally */
+  gap: 1.5rem; /* Space between sections */
+}
+
+/* Social Links Styling (Top) */
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem; /* Space between icons */
+}
+
+.socialLinkItem {
+  color: #94a3b8; /* Default muted color */
+  font-size: 1.6rem; /* Icon size */
+  transition: color 0.3s ease, transform 0.3s ease;
+  line-height: 1; /* Ensure icon alignment */
+  padding: 0.2rem; /* Slight padding for focus */
+  border-radius: 50%;
+}
+
+.socialLinkItem:hover {
+  color: var(--primary-accent, #60a5fa); /* Accent color on hover */
+  transform: translateY(-3px) scale(1.05);
+}
+.socialLinkItem:focus-visible {
+   outline: 2px solid var(--primary-accent, #60a5fa);
+   outline-offset: 2px;
+}
+
+
+/* Reference Links Styling */
+.referenceLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 0.8rem 1.8rem; /* Row and Column gap */
+  font-size: 0.85rem; /* Smaller font for refs */
+}
+
+.referenceLinks a {
+  color: #94a3b8; /* Muted default link color */
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.4em; /* Space between icon and text */
+}
+
+.referenceLinks a:hover {
+  color: #d1d5db; /* Slightly brighter on hover */
+  text-decoration: underline;
+}
+
+.referenceLinks a svg { /* Style icons in reference links */
+   font-size: 1em; /* Relative size */
+   opacity: 0.8;
+}
+
+
+/* Copyright Text Styling */
+.copyright {
+  font-size: 0.8rem; /* Smallest text */
+  color: #6b7280; /* Darkest muted gray */
+  margin-top: 1rem; /* Extra space above copyright */
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .footer { padding: 2.5rem 0 1.5rem 0; }
+  .footerContainer { gap: 1.2rem; }
+  .socialLinks { gap: 1rem; }
+  .socialLinkItem { font-size: 1.5rem; }
+  .referenceLinks { gap: 0.6rem 1.2rem; font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+   .referenceLinks { flex-direction: column; gap: 0.6rem; align-items: center; } /* Stack links */
+   .copyright { font-size: 0.75rem; }
+}
