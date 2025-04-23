@@ -1,55 +1,208 @@
-/* src/components/Skills/Skills.module.css */
+/* src/components/Skills/Skills.module.css - TABBED LAYOUT (DARK THEME) */
+
+/* --- Variables (Ensure defined globally) --- */
+:root {
+  --indigo-bg: #101727;
+  --indigo-card-bg: #1f2937;
+  --indigo-border: #374151;
+  --indigo-text-main: #e6e9f0;
+  --indigo-text-soft: #a8b1cf;
+  --indigo-text-muted: #747e9b;
+  --violet-accent: #8b5cf6;
+  --violet-accent-hover: #a78bfa;
+  --teal-accent: #14b8a6; /* For tool tags maybe */
+}
+
 .skills {
-    background-color: #f9fafb; /* Slightly different light background */
-  }
-  
-  /* Use global h2 styling */
-  
-  .skillsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 2rem;
-    margin-top: 2rem; /* Space below h2 */
-  }
-  
-  .skillCategory {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-  
-  .skillCategory:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-  }
-  
-  .skillCategory h3 {
-    color: #4a90e2; /* Accent color for category titles */
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-  }
-  
-  .skillCategory ul {
-    list-style: none; /* Already global, but ensures it */
-  }
-  
-  .skillCategory li {
-    margin-bottom: 0.5rem;
-    color: #555;
-    padding-left: 1.2rem; /* Indent items */
-    position: relative; /* For pseudo-element */
-  }
-  
-  .skillCategory li::before {
-    content: '▹'; /* Custom bullet */
-    position: absolute;
-    left: 0;
-    color: #4a90e2; /* Accent color */
-    font-weight: bold;
-  }
-  
-  
-  /* No media query needed for grid columns due to auto-fit */
+  background-color: var(--indigo-bg); /* Match theme */
+  padding: 80px 0 100px 0;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  color: var(--indigo-text-soft);
+}
+
+.sectionTitle { /* Reuse Section Title style */
+  text-align: center; font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 700;
+  color: var(--indigo-text-main); margin-bottom: 3rem; /* Slightly less margin */
+}
+
+/* === Tab Buttons Styling === */
+.skillTabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 0.8rem;
+  margin-bottom: 3rem; /* Space below tabs */
+  border-bottom: 1px solid var(--indigo-border);
+  padding-bottom: 1rem;
+}
+
+.tabButton {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--indigo-text-soft);
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent; /* Placeholder for active indicator */
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  border-radius: 6px 6px 0 0; /* Slight top rounding */
+  position: relative;
+  top: 1px; /* Align with bottom border */
+}
+
+.tabButton:hover {
+  color: var(--indigo-text-main);
+  background-color: rgba(31, 41, 55, 0.5); /* Subtle hover background */
+}
+
+.tabButton.active {
+  color: var(--violet-accent);
+  border-bottom-color: var(--violet-accent);
+  /* background-color: var(--indigo-card-bg); Slightly darker maybe */
+}
+
+.tabButton:focus-visible {
+    outline: 2px solid var(--violet-accent);
+    outline-offset: 2px;
+}
+
+/* === Tab Content Container === */
+.tabContentContainer {
+  max-width: 950px; /* Control content width */
+  margin: 0 auto;
+  position: relative; /* If using animations */
+}
+
+/* Base styling for all tab content panels */
+.tabContent {
+  display: none; /* Hidden by default */
+  /* Fade-in animation */
+  opacity: 0;
+  animation: fadeInContent 0.5s ease-out forwards;
+}
+.tabContent.active {
+  display: block; /* Show active tab content */
+}
+
+@keyframes fadeInContent {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Grid for Icon + Name Lists (Technical, Soft, Other) --- */
+.skillGrid {
+  display: grid;
+  /* Flexible columns for skills */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem 1.5rem; /* Row and Column Gap */
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--indigo-card-bg); /* Card BG for item */
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--indigo-border);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.skillItem:hover {
+    transform: scale(1.03);
+    border-color: #5a6780;
+}
+
+.skillIcon {
+  font-size: 1.3rem;
+  color: var(--violet-accent);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.skillName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--indigo-text-main);
+}
+
+/* --- Container for Tool Categories --- */
+.toolCategoriesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between tool categories */
+}
+
+.toolCategory {
+  background-color: rgba(31, 41, 55, 0.3); /* Slightly different background */
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--indigo-border);
+}
+
+.toolCategoryTitle { /* H4 */
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--indigo-text-soft);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--indigo-border);
+  display: inline-block; /* Keep border only under text */
+}
+
+.skillTagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem; /* Gap between tags */
+}
+
+.skillTag {
+  display: inline-flex; /* For icon inside */
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--teal-accent, #14b8a6); /* Use secondary accent maybe */
+  background-color: rgba(20, 184, 166, 0.1);
+  padding: 0.4em 0.9em;
+  border-radius: 15px;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  transition: transform 0.2s ease;
+}
+.skillTag:hover {
+    transform: scale(1.05);
+}
+
+.tagIcon {
+  font-size: 0.9em; /* Icon size relative to text */
+  opacity: 0.8; /* Make icon subtle */
+}
+
+/* No content message (used internally by React) */
+.noSkills {
+  text-align: center;
+  color: var(--indigo-text-muted);
+  padding: 3rem 0;
+  font-style: italic;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .sectionTitle { margin-bottom: 3rem; }
+    .skillTabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 0.8rem;} /* Allow horizontal scroll on mobile */
+    .tabButton { padding: 0.6rem 1rem; font-size: 0.9rem;}
+    .skillGrid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;}
+    .toolCategory { padding: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+    .skills { padding: 60px 0 80px 0; }
+    .sectionTitle { font-size: clamp(1.7rem, 5vw, 2rem); }
+    .tabButton { font-size: 0.85rem; padding: 0.5rem 0.8rem;}
+    .skillItem { padding: 0.7rem 0.9rem; gap: 0.6rem; }
+    .skillIcon { font-size: 1.1rem; }
+    .skillName { font-size: 0.85rem; }
+    .skillTag { font-size: 0.8rem; padding: 0.3em 0.7em; }
+}
