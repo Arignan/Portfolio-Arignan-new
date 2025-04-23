@@ -30,16 +30,9 @@ export const experience = [
   ];
   
   export const education = [
+    
     {
       id: 1,
-      institution: "University of Technology",
-      degree: "B.S. in Aritificial Intelligence",
-      location: "Germany, Bavaria, Munich",
-      years: "2025 - 2028",
-      description: "Relevant coursework: Data Structures, Algorithms, Web Development, Database Management. Dean's List all semester." // Optional details
-    },
-    {
-      id: 2,
       institution: "Online Course Platform",
       degree: "Full-Stack Web Development Certificate",
       location: "Online",
@@ -47,7 +40,7 @@ export const experience = [
       description: "Completed an full coursework covering MERN stack development."
     },
     {
-      id: 3,
+      id: 2,
       institution: "Kilinochchi Maha Vidyalayam",
       degree: "G.C.E Advanced Level",
       location: "Kilinochchi, Sri Lanka",
@@ -55,7 +48,7 @@ export const experience = [
       description: "Combined Mathematics, Physics, Chemistry , ICT, English."
     },
     {
-      id: 4,
+      id: 3,
       institution: "Kilinochchi Vivekanantha Vidyalayam",
       degree: "G.C.E Ordinary Level",
       location: "Kilinochchi, Sri Lanka",

@@ -243,7 +243,7 @@
   /* Adjust minmax for desired card size */
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 2rem; /* Gap between cards */
-  max-width: 1000px; /* Or desired max width */
+  max-width: 80%; /* Or desired max width */
   margin: 10px auto; /* Center */
   border-radius: 20px;
   box-shadow: inset 0px 0px 6px 0px #ffffff, 0px 0px 5px 0px #ffffff;
