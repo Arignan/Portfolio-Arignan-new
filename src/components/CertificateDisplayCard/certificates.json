@@ -5,7 +5,7 @@
       "issuer": "Omdena",
       "date": "Jul 2024",
       "displayUrl": "https://confirm.omdena.com/LCsmw88",
-      "imageUrl": "src/assets/img/certificates/OmdenaCertificate.png"
+      "imageUrl": "/certificates/OmdenaCertificate.png"
     },
     {
       "id": "cert-002",
@@ -13,7 +13,7 @@
       "issuer": "Coursera | IBM",
       "date": "Apr 2024",
       "displayUrl": "https://www.coursera.org/account/accomplishments/specialization/BZN2247HHNM2",
-      "imageUrl": "src/assets/img/certificates/ibmaiengineering.jpeg"
+      "imageUrl": "/certificates/ibmaiengineering.jpeg"
     },
     {
       "id": "cert-003",
@@ -21,7 +21,7 @@
       "issuer": "Coursera | IBM",
       "date": "May 2024",
       "displayUrl": "https://www.coursera.org/account/accomplishments/specialization/Y9JU5WLCGU4N", 
-      "imageUrl": "src/assets/img/certificates/ibmdatascience.jpeg"
+      "imageUrl": "/certificates/ibmdatascience.jpeg"
     },
     {
       "id": "cert-004",
@@ -29,7 +29,7 @@
       "issuer": "Moratuwa university",
       "date": "Jan 2025",
       "displayUrl": "https://www.coursera.org/account/accomplishments/specialization/Y9JU5WLCGU4N", 
-      "imageUrl": "src/assets/img/certificates/ibmdatascience.jpe"
+      "imageUrl": "/certificates/ibmdatascience.jpe"
     }
     
   ]
