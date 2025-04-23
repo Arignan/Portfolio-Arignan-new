@@ -3,21 +3,21 @@
 export const projects = [
   {
     id: "proj-01", // Added unique IDs
-    title: "1 AI Recommendation Engine",
-    description: "Developed a collaborative filtering recommendation system using Python and TensorFlow to suggest items based on user behavior.",
-    imageUrl: "/images/project-recommender.jpg", // **REPLACE with actual image path in /public**
-    techStack: ["Python", "TensorFlow", "Pandas", "Flask", "React"],
+    title: "Bitcoin Price Prediction Using Machine Learning",
+    description: "This predict a signal that indicates whether buying a particular bitcoin stock.",
+    imageUrl: "src/assets/img/project/bitcoinpp.jpeg", // **REPLACE with actual image path in /public**
+    techStack: ["Python", "TensorFlow", "Pandas", "NumPy"],
     liveUrl: "#", // **REPLACE with actual link or null/remove**
     repoUrl: "YOUR_GITHUB_REPO_URL" // **REPLACE with actual link**
   },
   {
     id: "proj-02",
-    title: "2 Portfolio Website (React)",
+    title: "Credit card financial dashboard using PowerBI",
     description: "This personal portfolio website, built with React, showcasing skills and projects using modern frontend techniques.",
-    imageUrl: "/images/project-portfolio.jpg", // **REPLACE with actual image path in /public**
-    techStack: ["React", "JavaScript", "CSS Modules", "Vite"],
+    imageUrl: "src/assets/img/project/Credit-Card-Financial-Weekly-Dashboard-Report-project-PBI.png", // **REPLACE with actual image path in /public**
+    techStack: ["PowerBI", "Excel", "PostgreSQL"],
     liveUrl: "#", // **REPLACE with actual link or null/remove**
-    repoUrl: "YOUR_GITHUB_REPO_URL" // **REPLACE with actual link**
+    repoUrl: "https://github.com/Arignan/Credit-Card-Financial-Weekly-Dashboard-Report-project-PBI" // **REPLACE with actual link**
   },
   {
      id: "proj-03",

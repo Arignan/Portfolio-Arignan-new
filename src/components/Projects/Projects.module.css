@@ -61,18 +61,18 @@
 
   /* Initial hidden gradient border */
    /* &::before, &::after { ... } for gradient borders is complex. Easier: box-shadow glow */
-   box-shadow: 0 0 0 0px var(--primary-glow-start), /* Glow initial */
-               0 4px 15px rgba(30, 35, 45, 0.05),
-               0 1px 4px rgba(30, 35, 45, 0.03); /* Base shadows */
+   box-shadow: 0 0 20px 10px rgb(0 0 0 / 25%), 
+                0 4px 15px 0px rgba(30, 35, 45, 0.05), 
+                inset 0px 0px 10px 0px rgb(70 70 70); /* Base shadows */
    transition: transform 0.3s ease, box-shadow 0.35s ease; /* Ensure shadow transition */
 }
 
 .projectCard:hover {
-  transform: translateY(-6px) scale(1.005); /* Subtle lift */
+  transform: translateY(-6px) scale(1); /* Subtle lift */
    /* Add glow effect using box-shadow */
-   box-shadow: 0 0 0 3px var(--primary-glow-start), /* Glow appears */
-               0 10px 25px rgba(30, 35, 45, 0.08), /* Enhance base */
-               0 4px 8px rgba(30, 35, 45, 0.05);
+   box-shadow: 0 0 10px 1px rgb(0 0 0 / 25%), 
+                0 4px 15px 0px rgba(30, 35, 45, 0.05), 
+                inset 0px 0px 10px 0px rgb(70 70 70); /* Base shadows */
 }
 
 /* Fade-in animation still good */
