@@ -8,21 +8,24 @@
 import {
     FaChartLine, FaBrain, FaRobot, FaCogs, FaDatabase, FaCode, FaCodeBranch,
     FaComments, FaCamera, FaNetworkWired, FaPython, FaReact, FaGitAlt, FaDocker,
-    FaCheck, FaSearch, FaUsers, FaLightbulb, FaQuoteRight, FaBook, FaClock, FaComment,FaAws, FaProjectDiagram,FaMicrochip,FaSyncAlt ,FaBug ,FaTools ,FaInfoCircle
+    FaCheck, FaSearch, FaUsers, FaLightbulb, FaQuoteRight, FaBook, FaClock, FaComment,FaAws, FaProjectDiagram,FaMicrochip,FaSyncAlt ,FaBug ,FaTools ,FaInfoCircle,
+    FaKorvue 
   } from 'react-icons/fa';
-  import { FaPeopleGroup } from "react-icons/fa6";
+  import { FaPeopleGroup, FaFileExcel  } from "react-icons/fa6";
 
   import {
     SiTensorflow, SiPytorch, SiScikitlearn, SiOpencv, SiGooglecloud, SiMysql, SiPostgresql, SiJupyter,SiPandas, SiJavascript, SiNumpy, SiMongodb,SiPlotly
   } from 'react-icons/si';
-  import { BsDatabaseFillCheck, BsSpeedometer2 } from "react-icons/bs";
+  import { BsDatabaseFillCheck, BsSpeedometer2, BsBarChartFill, BsFileEarmarkSpreadsheetFill  } from "react-icons/bs";
   import { AiOutlineConsoleSql, AiOutlineCloudServer } from "react-icons/ai";
   import { DiVisualstudio } from "react-icons/di";
   import { GiBrainFreeze } from "react-icons/gi";
   import { HiOutlineLightBulb } from "react-icons/hi";
-
+  import { IoLogoTableau } from "react-icons/io5";
   import { LuChartScatter } from "react-icons/lu";
   import { VscAzure } from "react-icons/vsc";
+  import { TiInfinityOutline } from "react-icons/ti";
+
   
   export const skillsData = {
     technical: [
@@ -57,14 +60,14 @@ import {
     tool: [
       { category: "Programming Languages", tools: [{ name: "Python", icon: <FaPython /> }, { name: "JavaScript (ES6+)", icon: <SiJavascript /> }, { name: "SQL", icon: <AiOutlineConsoleSql /> }, /*{ name: "R", icon: <FaRProject /> }, { name: "C++", icon: <SiCplusplus /> }*/] },
       { category: "Data Analysis/Wrangling", tools: [{ name: "Pandas", icon: <SiPandas /> }, { name: "NumPy", icon: <SiNumpy /> }, /*{ name: "Google Analytics", icon: <SiGoogleanalytics/> }*/] },
-      { category: "ML/DL Frameworks", tools: [{ name: "Scikit-learn", icon: <SiScikitlearn /> }, { name: "TensorFlow", icon: <SiTensorflow /> }, { name: "PyTorch", icon: <SiPytorch /> }, /*{ name: "Keras", icon: <SiKeras /> }*/] },
-      { category: "Data Visualization", tools: [{ name: "Matplotlib", icon: <LuChartScatter  /> }, { name: "Seaborn", icon: <SiNumpy /> }, { name: "Plotly", icon: <SiPlotly /> },/*{ name: "Tableau", icon: <SiTableau /> }, { name: "Power BI", icon: <SiPowerbi /> }*/] },
+      { category: "ML/DL Frameworks", tools: [{ name: "Scikit-learn", icon: <SiScikitlearn /> }, { name: "TensorFlow", icon: <SiTensorflow /> }, { name: "PyTorch", icon: <SiPytorch /> }, { name: "Keras", icon: <FaKorvue /> }] },
+      { category: "Data Visualization", tools: [{ name: "Matplotlib", icon: <LuChartScatter  /> }, { name: "Seaborn", icon: <SiNumpy /> }, { name: "Plotly", icon: <SiPlotly /> }, { name: "Tableau", icon: <IoLogoTableau  /> }, { name: "Power BI", icon: <BsBarChartFill  /> } ] },
       { category: "Databases", tools: [{ name: "MySQL", icon: <SiMysql /> }, { name: "PostgreSQL", icon: <SiPostgresql /> }, { name: "MongoDB", icon: <SiMongodb /> } ] },
       { category: "Version Control", tools: [{ name: "Git & GitHub", icon: <FaGitAlt /> }] },
       { category: "Cloud Platforms", tools: [{ name: "AWS (S3, EC2, SageMaker)", icon: <FaAws /> }, { name: "Google Cloud (Basic)", icon: <SiGooglecloud /> }, { name: "Azure (Basic)", icon: <VscAzure  /> }] },
-      { category: "Development & Deployment", tools: [{ name: "Docker", icon: <FaDocker /> }, { name: "VS Code", icon: <DiVisualstudio /> }, { name: "Jupyter Notebook/Lab", icon: <SiJupyter /> }, /* { name: "PyCharm", icon: <SiPycharm /> } */ ] },
+      { category: "Development & Deployment", tools: [{ name: "Docker", icon: <FaDocker /> }, { name: "VS Code", icon: <DiVisualstudio /> }, { name: "Jupyter Notebook/Lab", icon: <SiJupyter /> },  { name: "Google Colab", icon: <TiInfinityOutline  /> }  ] },
       { category: "Computer Vision", tools: [{ name: "OpenCV", icon: <SiOpencv /> }] },
-      // { category: "Spreadsheets", tools: [ { name: "Excel", icon: <SiMicrosoftexcel /> }, { name: "Google Sheets", icon: <SiGooglesheets /> }] }, // Decide if needed
+      { category: "Spreadsheets", tools: [ { name: "Excel", icon: <FaFileExcel  /> }, { name: "Google Sheets", icon: <BsFileEarmarkSpreadsheetFill  /> }] }, // Decide if needed
     ],
     soft: [
       { name: "Problem-Solving", icon: <FaCogs /> },

@@ -5,7 +5,7 @@ import styles from './Skills.module.css';
 import { skillsData } from './skillsData.jsx'; // Import the new data structure
 
 const Skills = () => {
-  const [activeTab, setActiveTab] = useState('technical'); // Default tab
+  const [activeTab, setActiveTab] = useState('tool'); // Default tab
 
   const renderSkillItem = (skill, index) => (
       <div key={index} className={styles.skillItem}>
@@ -39,16 +39,16 @@ const Skills = () => {
         {/* Tab Buttons */}
         <div className={styles.skillTabs}>
           <button
-            className={`${styles.tabButton} ${activeTab === 'technical' ? styles.active : ''}`}
-            onClick={() => setActiveTab('technical')}
-          >
-            Technical
-          </button>
-          <button
             className={`${styles.tabButton} ${activeTab === 'tool' ? styles.active : ''}`}
             onClick={() => setActiveTab('tool')}
           >
             Tools & Technologies
+          </button>
+          <button
+            className={`${styles.tabButton} ${activeTab === 'technical' ? styles.active : ''}`}
+            onClick={() => setActiveTab('technical')}
+          >
+            Technical
           </button>
           <button
             className={`${styles.tabButton} ${activeTab === 'soft' ? styles.active : ''}`}
@@ -66,19 +66,19 @@ const Skills = () => {
 
         {/* Tab Content Area */}
         <div className={styles.tabContentContainer}>
-            {/* --- Technical Skills --- */}
-            <div id="technical" className={`${styles.tabContent} ${activeTab === 'technical' ? styles.active : ''}`}>
-               <div className={styles.skillGrid}> {/* Grid for icon+name items */}
-                   {skillsData.technical.map(renderSkillItem)}
-               </div>
-            </div>
-
             {/* --- Tool Skills --- */}
              <div id="tool" className={`${styles.tabContent} ${activeTab === 'tool' ? styles.active : ''}`}>
                  <div className={styles.toolCategoriesContainer}> {/* Container for category blocks */}
                     {skillsData.tool.map(renderToolCategory)}
                  </div>
              </div>
+
+            {/* --- Technical Skills --- */}
+            <div id="technical" className={`${styles.tabContent} ${activeTab === 'technical' ? styles.active : ''}`}>
+               <div className={styles.skillGrid}> {/* Grid for icon+name items */}
+                   {skillsData.technical.map(renderSkillItem)}
+               </div>
+            </div>
 
             {/* --- Soft Skills --- */}
             <div id="soft" className={`${styles.tabContent} ${activeTab === 'soft' ? styles.active : ''}`}>
