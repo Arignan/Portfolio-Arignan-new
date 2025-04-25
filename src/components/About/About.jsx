@@ -10,23 +10,23 @@ import { VscProject } from "react-icons/vsc";
 const About = () => {
   // --- STATS DATA (Consolidated) ---
   const projectStats = {
-      total: 15, totalIcon: <VscProject />,
-      ds: 5,     dsIcon: <FiDatabase />,
-      ai: 4,     aiIcon: <FiCpu />,
-      swe: 6,    sweIcon: <FiCode />,
+      total: 5, totalIcon: <VscProject />,
+      ds: 1,     dsIcon: <FiDatabase />,
+      ai: 1,     aiIcon: <FiCpu />,
+      swe: 3,    sweIcon: <FiCode />,
       isUpdated: true // For the blinking dot
   };
   const careerStats = {
-      certs: 3,           certsIcon: <FiAward />, // Or FiFileText
-      awards: 5,          awardsIcon: <FiAward />,
-      publications: 1,    publicationsIcon: <FiFileText />,
-      expYears: 2,        expYearsIcon: <FiBriefcase />
+      certs: 2,           certsIcon: <FiAward />, // Or FiFileText
+      awards: 0,          awardsIcon: <FiAward />,
+      publications: 0,    publicationsIcon: <FiFileText />,
+      expYears: 1,        expYearsIcon: <FiBriefcase />
   };
 
   // --- ACHIEVEMENTS DATA ---
   const achievements = [
-      { id: 1, title: "Dean's List - All Semesters", issuer: "University of Technology", year: "2025-2028", icon: <FiAward />},
-      { id: 2, title: "1st Place - University Hackathon", issuer: "Tech Club", year: "2027", icon: <FiTrendingUp/> }, // Changed Icon
+      //{ id: 1, title: "Dean's List - All Semesters", issuer: "University of Technology", year: "2025-2028", icon: <FiAward />},
+      //{ id: 2, title: "1st Place - University Hackathon", issuer: "Tech Club", year: "2027", icon: <FiTrendingUp/> }, // Changed Icon
       { id: 3, title: "Top 5% - LeetCode Weekly Contest", issuer: "LeetCode", year: "2026", icon: <FiActivity/> } // Changed Icon
       // Add more
   ];

@@ -3,15 +3,13 @@
 export const experience = [
     {
       id: 1,
-      title: "AI Engineer",
-      company: "Tech Solutions Inc.",
-      location: "Germany, Bavaria, Munich", // Optional location
-      years: "Oct 2025 - Present", // Or { start: 'Jan 2022', end: 'Present' }
+      title: "Account management & IT support",
+      company: "ULX wholesale.",
+      location: "UK, Coventry.", // Optional location
+      years: "Jan 2025 - Present", // Or { start: 'Jan 2022', end: 'Present' }
       responsibilities: [
-        "Developed and maintained web applications using React, Node.js, and MongoDB.",
-        "Collaborated with cross-functional teams to define, design, and ship new features.",
-        "Improved application performance by optimizing code and database queries.",
-        "Wrote unit and integration tests to ensure code quality.",
+        "Developed and maintained web applications.",
+        "Accounting and managing business.",
       ],
     },
     {
@@ -21,9 +19,9 @@ export const experience = [
       location: "Remote",
       years: "Feb 2024 - Current",
       responsibilities: [
-        "Assisted senior developers in building responsive websites using HTML, CSS, and JavaScript.",
-        "Tested websites across various browsers and devices.",
-        "Managed content updates for client websites using CMS platforms.",
+        "Real world challenge projects work with global team of expert.",
+        "Few projects are Enhancing tourism in scotland, Dengu outbreak prediction in srilanka, UEFA euro 2024 prediction, Robotics AI powered computer vision training in El Salvador.",
+        "All projects are related to AI, Data Science, Software engineering, Robotics.",
       ],
     },
     // Add more experience entries as needed
@@ -33,11 +31,11 @@ export const experience = [
     
     {
       id: 1,
-      institution: "Online Course Platform",
-      degree: "Full-Stack Web Development Certificate",
+      institution: "Online Course Platform (Coursera, moratuwa)",
+      degree: "Full-Stack Web Development, AI Engineering, Data Science professional Certificate",
       location: "Online",
       years: "2024-Current",
-      description: "Completed an full coursework covering MERN stack development."
+      description: "Completed an full coursework covering MERN stack development. AI and Data Science Related Projects works in Local and IBM cloud."
     },
     {
       id: 2,
