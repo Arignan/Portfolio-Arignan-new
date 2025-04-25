@@ -33,7 +33,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className={styles.skills}>
-      <div className="container">
+      <div className={styles.container}>
         <h2 className={styles.sectionTitle}>Skills</h2> {/* Reuse style */}
 
         {/* Tab Buttons */}

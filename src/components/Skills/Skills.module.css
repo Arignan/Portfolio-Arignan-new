@@ -20,6 +20,10 @@
   font-family: 'Inter', sans-serif;
   color: var(--indigo-text-soft);
 }
+.skills .container{
+  margin: 0 auto; /* Center container */
+  padding: 0 1.5rem; /* Horizontal padding for smaller screens */
+}
 
 .sectionTitle { /* Reuse Section Title style */
   text-align: center; font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 700;
@@ -104,19 +108,58 @@
   align-items: center;
   gap: 0.8rem;
   background-color: var(--indigo-card-bg); /* Card BG for item */
-  padding: 0.8rem 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--indigo-border);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid transparent;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 .skillItem:hover {
-    transform: scale(1.03);
-    border-color: #5a6780;
+  /* Apply the animation on hover */
+  animation: borderColorSequence 0.4s ease-in-out forwards; /* Animation runs for 1.5s, stops at the final state */
+  transform: scale(1.005); /* Keep your scaling effect */
+}
+
+/* Define the keyframes for the border color animation */
+@keyframes borderColorSequence {
+  0% {
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+  }
+  25% {
+      /* Right border turns blue */
+      border-top-color: transparent;
+      border-right-color: #2fad72;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+  }
+  50% {
+      /* Bottom border turns blue (Right stays blue) */
+      border-top-color: transparent;
+      border-right-color: #2fad72;
+      border-bottom-color: #2fad72;
+      border-left-color: transparent;
+  }
+  75% {
+      /* Left border turns blue (Right and Bottom stay blue) */
+      border-top-color: transparent;
+      border-right-color: #2fad72;
+      border-bottom-color: #2fad72;
+      border-left-color: #2fad72;
+  }
+  100% {
+      /* Top border turns blue (All sides are now blue) */
+      border-top-color: #2fad72;
+      border-right-color: #2fad72;
+      border-bottom-color: #2fad72;
+      border-left-color: #2fad72;
+  }
 }
 
 .skillIcon {
   font-size: 1.3rem;
-  color: var(--violet-accent);
+  color: #4093eb;
   flex-shrink: 0;
   line-height: 1;
 }
@@ -129,14 +172,15 @@
 
 /* --- Container for Tool Categories --- */
 .toolCategoriesContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; /* Space between tool categories */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .toolCategory {
   background-color: rgba(31, 41, 55, 0.3); /* Slightly different background */
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 1.5rem;
   border: 1px solid var(--indigo-border);
 }
