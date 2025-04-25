@@ -5,7 +5,7 @@ export const projects = [
     id: "proj-01", // Added unique IDs
     title: "Bitcoin Price Prediction Using Machine Learning",
     description: "This predict a signal that indicates whether buying a particular bitcoin stock.",
-    imageUrl: "src/assets/img/project/bitcoinpp.jpeg", // **REPLACE with actual image path in /public**
+    imageUrl: "/project/bitcoinpp.jpeg", // **REPLACE with actual image path in /public**
     techStack: ["Python", "TensorFlow", "Pandas", "NumPy"],
     liveUrl: "#", // **REPLACE with actual link or null/remove**
     repoUrl: "YOUR_GITHUB_REPO_URL" // **REPLACE with actual link**
@@ -14,7 +14,7 @@ export const projects = [
     id: "proj-02",
     title: "Credit card financial dashboard using PowerBI",
     description: "This personal portfolio website, built with React, showcasing skills and projects using modern frontend techniques.",
-    imageUrl: "src/assets/img/project/Credit-Card-Financial-Weekly-Dashboard-Report-project-PBI.png", // **REPLACE with actual image path in /public**
+    imageUrl: "/project/Credit-Card-Financial-Weekly-Dashboard-Report-project-PBI.png", // **REPLACE with actual image path in /public**
     techStack: ["PowerBI", "Excel", "PostgreSQL"],
     liveUrl: "#", // **REPLACE with actual link or null/remove**
     repoUrl: "https://github.com/Arignan/Credit-Card-Financial-Weekly-Dashboard-Report-project-PBI" // **REPLACE with actual link**
@@ -23,7 +23,7 @@ export const projects = [
      id: "proj-03",
      title: "3 Robotics Simulation",
      description: "Simulated robotic arm movement and path planning using ROS and Gazebo for obstacle avoidance.",
-     imageUrl: "/images/project-robotics.jpg", // **REPLACE with actual image path in /public**
+     imageUrl: "/project-robotics.jpg", // **REPLACE with actual image path in /public**
      techStack: ["ROS", "Gazebo", "Python", "C++"],
      liveUrl: null, // Example: No live demo
      repoUrl: "YOUR_GITHUB_REPO_URL" // **REPLACE with actual link**
