@@ -26,7 +26,7 @@ const Footer = () => {
               <FaGithub />
             </a>
             <a
-              href="YOUR_LINKEDIN_URL" // ** UPDATE URL **
+              href="https://www.linkedin.com/in/arignansritharan/" // ** UPDATE URL **
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
