@@ -3,11 +3,11 @@
 /* --- Theme Variables --- */
 :root {
   /* Base */
-  --glow-bg: #fdfdff; /* Very slightly off-white, cool tone */
-  --glow-card-bg: #ffffff;
+  --glow-bg: #003a9175; /* Very slightly off-white, cool tone */
+  --glow-card-bg: #00102e;
   --glow-border: #eaeef2; /* Lighter border */
-  --glow-text-dark: #1a202e;
-  --glow-text-med: #4a5568;
+  --glow-text-dark: #fbfcff;
+  --glow-text-med: #dddcdc;
   --glow-text-light: #a0aec0;
   /* Accents */
   --primary-accent: #4f46e5;   /* Indigo/Violet Primary */
@@ -61,9 +61,7 @@
 
   /* Initial hidden gradient border */
    /* &::before, &::after { ... } for gradient borders is complex. Easier: box-shadow glow */
-   box-shadow: 0 0 20px 10px rgb(0 0 0 / 25%), 
-                0 4px 15px 0px rgba(30, 35, 45, 0.05), 
-                inset 0px 0px 10px 0px rgb(70 70 70); /* Base shadows */
+   box-shadow: 0 0 20px 10px rgb(0 0 0 / 25%), 0 4px 15px 0px rgba(30, 35, 45, 0.05); /* Base shadows */
    transition: transform 0.3s ease, box-shadow 0.35s ease; /* Ensure shadow transition */
 }
 
@@ -122,11 +120,11 @@
 /* Tech Stack - Use secondary color */
 .techStack { margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .techTag {
-  font-size: 0.75rem; font-weight: 500;
-  color: var(--secondary-accent, #0d9488); /* Teal text */
-  background-color: var(--secondary-accent-light, rgba(20, 184, 166, 0.1));
+  font-size: 0.8rem; font-weight: 500;
+  color: #030a0afa; 
+  background-color: #ffffffab;
   padding: 0.3em 0.8em; border-radius: 4px;
-  border: 1px solid rgba(20, 184, 166, 0.2);
+  border: 1px solid rgb(20 184 166);
 }
 
 .projectDescription { font-size: 0.85rem; color: var(--glow-text-med); line-height: 1.6; margin: 0; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
@@ -138,7 +136,7 @@
   display: inline-flex; align-items: center; gap: 0.4em;
   padding: 0.6rem 1.2rem; border: 1px solid var(--glow-border); /* Use lighter border */
   background-color: var(--glow-card-bg); /* White button */
-  color: var(--primary-accent); /* Blue Text */
+  color: #ffffff; 
   border-radius: 6px; font-weight: 600; font-size: 0.9rem; cursor: pointer;
   transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
@@ -150,7 +148,7 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.06);
 }
 .pageButton:disabled { opacity: 0.5; cursor: not-allowed; background-color: var(--light-bg-alt); box-shadow: none; }
-.pageInfo { font-size: 0.9rem; color: var(--glow-text-med); font-weight: 500; }
+.pageInfo { font-size: 0.9rem; color: #ffffff; font-weight: 500; }
 
 .noProjects { text-align: center; color: var(--glow-text-med); padding: 3rem 0; font-style: italic; }
 
