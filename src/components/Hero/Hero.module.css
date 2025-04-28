@@ -106,8 +106,9 @@
    margin-bottom: 2.5rem;
    max-width: 550px; /* Limit width */
    box-shadow: 0px 0px 10px 0px #8f8f8f, inset -4px -4px 8px 0px #8f8f8f;
-    border-radius: 10px;
-    padding: 6px;
+    border-radius: 15px;
+    padding: 12px;
+    background-color: lavender;
 }
 
 .expertise {
@@ -226,7 +227,7 @@
 }
 
 .socialLink {
-  color: #94a3b8; /* Muted default */
+  color: #0046a9; /* Muted default */
   font-size: 1.3rem; /* Smaller default icons */
   padding: 0.5rem; /* Increase tappable area */
   transition: all 0.2s ease;
@@ -241,7 +242,7 @@
 .socialLink:hover {
   color: var(--primary-color, #3b82f6); /* Primary color on hover */
   transform: scale(1.1) translateY(-1px); /* Subtle lift/scale */
-  background-color: hsla(217, 91%, 93%, 0.5); /* Very faint blue background */
+  background-color: hsla(218, 100%, 85%, 0.5); /* Very faint blue background */
   border-color: #dbeafe; /* Light blue border */
 }
 .socialLink:focus-visible {

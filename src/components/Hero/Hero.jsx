@@ -78,7 +78,7 @@ const Hero = () => {
           <div className={styles.heroSocials}>
             <span className={styles.socialsLabel}>Connect:</span> {/* Optional Label */}
             <a
-              href="YOUR_LINKEDIN_URL" // *** CRITICAL: Update URL ***
+              href="https://www.linkedin.com/in/arignansritharan/" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -87,7 +87,7 @@ const Hero = () => {
               <FaLinkedin />
             </a>
             <a
-              href="YOUR_LEETCODE_URL" // *** CRITICAL: Update URL ***
+              href="https://leetcode.com/arignan03/" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -96,7 +96,7 @@ const Hero = () => {
               <SiLeetcode />
             </a>
             <a
-              href="YOUR_FACEBOOK_URL" // *** CRITICAL: Update URL ***
+              href="https://www.facebook.com/profile.php?id=100008011605475&mibextid=ZbWKwL" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -114,7 +114,7 @@ const Hero = () => {
               <FaGithub />
             </a>
             <a
-              href="YOUR_INSTAGRAM_URL" // *** CRITICAL: Update URL ***
+              href="https://www.instagram.com/arignan_03?igsh=MWN5dDN5cXI0cGljYQ==" // *** CRITICAL: Update URL ***
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
