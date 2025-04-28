@@ -246,8 +246,9 @@
   max-width: 80%; /* Or desired max width */
   margin: 10px auto; /* Center */
   border-radius: 20px;
-  box-shadow: inset 0px 0px 6px 0px #ffffff, 0px 0px 5px 0px #ffffff;
+  box-shadow: inset 0px 0px 2px 0px #ffffff7a, 0px 0px 1px 0px #000000;
   padding: 1rem; /* Padding around grid */
+  border: 1px solid white;
 }
 
 .noCertificates { /* Styling for empty message */
